@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marin Care Connections | Home Care Referral Agency | Marin County, CA</title>
+<meta name="description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<!--
+╔══════════════════════════════════════════════════════╗
+║              PHOTO SWAP GUIDE                        ║
+╠══════════════════════════════════════════════════════╣
+║ STEP 1 — Download 5 free photos from Pexels:         ║
+║  Hero:    pexels.com/photo/7551685                   ║
+║  Panel 1: pexels.com/photo/3768131                   ║
+║  Panel 2: pexels.com/photo/4386467                   ║
+║  Panel 3: pexels.com/photo/7551673                   ║
+║  Panel 4: pexels.com/photo/6647037                   ║
+║                                                      ║
+║ STEP 2 — Rename: hero.jpg panel1.jpg panel2.jpg      ║
+║          panel3.jpg panel4.jpg                       ║
+║                                                      ║
+║ STEP 3 — Put ALL 5 files in SAME FOLDER as this HTML ║
+║                                                      ║
+║ STEP 4 — Open in Notepad. Ctrl+F → "SWAP PHOTO"     ║
+║          Follow the instruction at each spot         ║
+║                                                      ║
+║ STEP 5 — Save. Open in Chrome. Photos appear.        ║
+╚══════════════════════════════════════════════════════╝
+-->
+<style>
+/* ── TOKENS ─────────────────────────────────── */
+:root {
+  --navy:     #0C1F36;
+  --navy-mid: #183352;
+  --navy-soft:#254D75;
+  --ink:      #060D16;
+  --gold:     #B8860B;
+  --gold-lt:  #D4A520;
+  --gold-glow:#E8C060;
+  --gold-pale:#F5E09A;
+  --silver:   #C8D8E8;
+  --cream:    #FDFAF4;
+  --warm:     #F5F0E6;
+  --stone:    #E8E2D6;
+  --text:     #2C2820;
+  --muted:    #6A6358;
+  --border:   rgba(184,134,11,0.22);
+  --ease:     cubic-bezier(0.25,0.46,0.45,0.94);
+  --sh:       0 20px 60px rgba(12,31,54,0.14);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+  /* GLOBAL BASE — everything inherits from here */
+  font-size:18px;
+}
+a { text-decoration:none; color:inherit; }
+img { max-width:100%; display:block; }
+
+/* ── HEADINGS — big and readable ── */
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; color:var(--navy); line-height:1.15; }
+h2 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight:700; }
+h3 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight:700; }
+h4 { font-size: 1.15rem; font-weight:600; }
+p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
+
+.container  { max-width:1240px; margin:0 auto; padding:0 2.5rem; }
+.section    { padding:8rem 0; }
+.section-sm { padding:4rem 0; }
+
+/* ── UTILITIES ── */
+.eyebrow {
+  font-family:'DM Sans',sans-serif;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.rule   { width:52px; height:2px; background:linear-gradient(90deg,var(--gold),var(--gold-glow)); margin:1.4rem 0; }
+.rule.c { margin:1.4rem auto; }
+.pill   {
+  display:inline-block;
+  padding:0.4rem 1.2rem;
+  border:1px solid var(--border);
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:rgba(184,134,11,0.05);
+}
+.fade-in { opacity:0; transform:translateY(22px); transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
+.fade-in.show { opacity:1; transform:none; }
+
+/* ── BUTTONS ── */
+.btn {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.85rem; font-weight:700;
+  letter-spacing:0.18em; text-transform:uppercase;
+  cursor:pointer; transition:all 0.35s var(--ease);
+  border:none; border-radius:0;
+}
+.btn-gold  { padding:1.2rem 3rem; background:var(--gold); color:white; }
+.btn-gold:hover  { background:var(--gold-lt); transform:translateY(-2px); box-shadow:0 10px 28px rgba(184,134,11,0.38); }
+.btn-ghost { padding:1.2rem 3rem; background:transparent; color:white; border:1px solid rgba(255,255,255,0.3); }
+.btn-ghost:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.65); transform:translateY(-2px); }
+.btn-navy  { padding:1.1rem 2.8rem; background:var(--navy); color:white; }
+.btn-navy:hover  { background:var(--navy-mid); transform:translateY(-2px); }
+
+/* ════════════════════════════════════════════════
+   NAVBAR
+════════════════════════════════════════════════ */
+#nav { position:fixed; inset:0 0 auto 0; z-index:999; padding:1.1rem 0; transition:all 0.4s var(--ease); }
+#nav.ink { background:rgba(6,13,22,0.97); backdrop-filter:blur(14px); padding:0.75rem 0; box-shadow:0 4px 40px rgba(0,0,0,0.5); }
+.nav-wrap { display:flex; align-items:center; justify-content:space-between; }
+
+/* NAV LOGO */
+.nav-logo { display:flex; align-items:center; gap:0.9rem; }
+.nav-logo-svg { width:48px; height:48px; flex-shrink:0; }
+.nav-brand-stack { display:flex; flex-direction:column; }
+.nav-brand-name { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; color:white; line-height:1; }
+.nav-brand-sub  { font-size:0.6rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-glow); margin-top:2px; }
+
+.nav-menu { display:flex; align-items:center; gap:2rem; list-style:none; }
+.nav-menu a { font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.78); transition:color 0.3s; }
+.nav-menu a:hover { color:white; }
+.nav-menu .nb { padding:0.5rem 1.2rem; border:1px solid rgba(184,134,11,0.4); color:var(--gold-glow)!important; }
+.nav-menu .nb:hover { background:rgba(184,134,11,0.1)!important; }
+.nav-menu .nc { padding:0.55rem 1.4rem; background:var(--gold); color:white!important; font-weight:700!important; white-space:nowrap; }
+.nav-menu .nc:hover { background:var(--gold-lt)!important; }
+
+.hbg { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+.hbg span { display:block; width:26px; height:2px; background:white; }
+.mob-nav { display:none; position:fixed; inset:0; background:var(--ink); z-index:998; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
+.mob-nav.on { display:flex; }
+.mob-nav a { font-family:'Playfair Display',serif; font-size:2.4rem; font-style:italic; color:white; }
+.mob-nav a:hover { color:var(--gold-glow); }
+.mob-close { position:absolute; top:2rem; right:2rem; font-size:1.5rem; color:white; cursor:pointer; background:none; border:none; }
+
+/* ════════════════════════════════════════════════
+   HERO — TIGHTENED, NO GAPING SPACE
+════════════════════════════════════════════════ */
+#hero {
+  position:relative;
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 44%;
+  overflow:hidden;
+}
+.hero-bg { position:absolute; inset:0; background:linear-gradient(128deg,#04101E 0%,#0C2040 52%,#071422 100%); }
+.hero-grain { position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px; }
+.hero-gold-bar { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 25%,var(--gold-glow) 60%,transparent); z-index:4; }
+
+/* LEFT — content column fills all vertical space */
+.hero-left {
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:9rem 3.5rem 5rem 3.5rem;
+  gap:0;
+}
+
+/* ★ AGENCY NAME — MASSIVE GOLD ★ */
+.hero-agency {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3.5rem,8vw,9rem);
+  font-weight:900;
+  line-height:0.92;
+  letter-spacing:-0.025em;
+  background:linear-gradient(135deg,#B8860B 0%,#D4A520 20%,#F5E09A 48%,#E8C060 65%,#C8960C 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 50px rgba(184,134,11,0.3));
+  margin-bottom:0.25em;
+}
+
+/* ★ CARE THAT COMES TO YOU — italic, large ★ */
+.hero-tagline {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3.2vw,3rem);
+  font-weight:400;
+  font-style:italic;
+  color:rgba(255,255,255,0.88);
+  line-height:1.15;
+  margin-bottom:1.8rem;
+  padding-left:1.4rem;
+  border-left:4px solid var(--gold);
+}
+
+.hero-sub {
+  font-size:1.15rem;
+  font-weight:300;
+  color:rgba(255,255,255,0.62);
+  max-width:520px;
+  line-height:1.9;
+  margin-bottom:2.5rem;
+}
+.hero-ctas { display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-bottom:3rem; }
+
+/* Trust bar inside left col */
+.hero-trust { border-top:1px solid rgba(184,134,11,0.12); padding-top:1.5rem; }
+.trust-row  { display:flex; gap:0; }
+.trust-item { flex:1; padding:0.8rem 1.2rem 0.8rem 0; display:flex; align-items:center; gap:0.9rem; border-right:1px solid rgba(184,134,11,0.08); }
+.trust-item:last-child { border-right:none; padding-right:0; }
+.trust-num   { font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:700; color:var(--gold-glow); line-height:1; }
+.trust-label { font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.38); line-height:1.5; }
+
+/* RIGHT — photo panel fills full height */
+.hero-right {
+  position:relative;
+  z-index:2;
+  overflow:hidden;
+}
+.hero-right::before {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(to right,#04101E 0%,rgba(4,16,30,0.4) 35%,transparent 70%);
+  z-index:2;
+}
+.hero-right::after {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(to top,#04101E 0%,transparent 20%);
+  z-index:2;
+}
+.hero-right img { width:100%; height:100%; object-fit:cover; object-position:center 20%; filter:sepia(10%) brightness(0.82) saturate(0.88); }
+
+/* Photo placeholder */
+.ph-box {
+  width:100%; height:100%; min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:linear-gradient(145deg,#0d2540,#183352);
+  gap:1rem; padding:2rem; text-align:center;
+}
+.ph-icon { font-size:4rem; opacity:0.18; }
+.ph-txt  { font-size:0.85rem; color:rgba(255,255,255,0.25); letter-spacing:0.15em; text-transform:uppercase; line-height:2; }
+.ph-link { font-size:0.78rem; color:rgba(184,134,11,0.5); margin-top:0.3rem; }
+
+.hero-scroll {
+  position:absolute; bottom:2rem; right:3rem; z-index:5;
+  display:flex; flex-direction:column; align-items:center; gap:0.4rem;
+  color:rgba(255,255,255,0.2); font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase;
+  animation:bob 2.5s infinite;
+}
+@keyframes bob { 0%,100%{transform:translateY(0);opacity:.2} 50%{transform:translateY(6px);opacity:.4} }
+.hero-scroll::after { content:''; width:1px; height:32px; background:linear-gradient(to bottom,rgba(184,134,11,0.5),transparent); }
+
+/* ════════════════════════════════════════════════
+   QUICK-NAV BAR
+════════════════════════════════════════════════ */
+#quicknav {
+  background:var(--navy-mid);
+  border-top:2px solid var(--gold);
+  border-bottom:1px solid rgba(184,134,11,0.15);
+  overflow-x:auto; scrollbar-width:none;
+}
+#quicknav::-webkit-scrollbar { display:none; }
+.qn-inner { display:flex; }
+.qn-item {
+  flex:1; min-width:110px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.4rem;
+  padding:1.2rem 1.5rem;
+  border-right:1px solid rgba(184,134,11,0.1);
+  cursor:pointer; transition:background 0.3s; text-decoration:none;
+  position:relative;
+}
+.qn-item::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:var(--gold); transform:scaleX(0); transform-origin:center; transition:transform 0.3s var(--ease);
+}
+.qn-item:last-child { border-right:none; }
+.qn-item:hover { background:rgba(255,255,255,0.06); }
+.qn-item:hover::after { transform:scaleX(1); }
+.qn-icon  { font-size:1.4rem; transition:transform 0.3s; }
+.qn-item:hover .qn-icon { transform:translateY(-2px); }
+.qn-label { font-size:0.68rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.72); transition:color 0.3s; white-space:nowrap; }
+.qn-item:hover .qn-label { color:var(--gold-glow); }
+.qn-sub   { font-size:0.62rem; color:rgba(255,255,255,0.3); }
+
+/* ════════════════════════════════════════════════
+   DISCLOSURE
+════════════════════════════════════════════════ */
+#disc { background:var(--navy); border-top:3px solid var(--gold); padding:1.4rem 0; }
+.disc-row { display:flex; align-items:flex-start; gap:1rem; }
+.disc-dot { width:24px; height:24px; background:var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:800; color:white; flex-shrink:0; margin-top:2px; }
+.disc-text { font-size:0.9rem; color:rgba(255,255,255,0.72); line-height:1.75; }
+.disc-text strong { color:var(--gold-glow); font-weight:600; }
+
+/* ════════════════════════════════════════════════
+   VALUES — ALWAYS 3 COLUMNS
+════════════════════════════════════════════════ */
+#values { background:var(--warm); border-bottom:1px solid var(--stone); padding:0; }
+.values-row {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);  /* LOCKED — never stacks */
+  border:1px solid var(--stone);
+}
+.v-block {
+  padding:3.5rem 3rem;
+  text-align:center;
+  border-right:1px solid var(--stone);
+  transition:background 0.35s;
+}
+.v-block:last-child { border-right:none; }
+.v-block:hover { background:white; }
+.v-icon { font-size:2.5rem; margin-bottom:1.4rem; }
+.v-block h4 {
+  font-family:'DM Sans',sans-serif;
+  font-size:0.85rem; font-weight:700;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--navy); margin-bottom:0.8rem;
+}
+.v-block p { font-size:1rem; color:var(--muted); line-height:1.75; }
+
+/* ════════════════════════════════════════════════
+   ABOUT
+════════════════════════════════════════════════ */
+#about { background:var(--cream); }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:7rem; align-items:center; }
+.about-card {
+  background:var(--navy); padding:4.5rem; position:relative; overflow:hidden;
+}
+.about-card::before {
+  content:''; position:absolute; top:-60px; right:-60px; width:240px; height:240px;
+  border-radius:50%; background:radial-gradient(circle,rgba(184,134,11,0.1),transparent 70%);
+}
+.about-card-quote {
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem; font-style:italic; font-weight:400;
+  color:white; line-height:1.65; margin-bottom:2rem;
+}
+.about-accent { color:var(--gold-glow); font-style:normal; font-weight:700; }
+.about-source { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.3); }
+.about-text h2 { margin-bottom:1.3rem; }
+.about-text p  { color:var(--muted); margin-bottom:1.6rem; }
+.about-tiles { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2.5rem; }
+.about-tile { padding:1.4rem 1.6rem; border-left:3px solid var(--gold); background:var(--warm); }
+.about-tile h4 {
+  font-family:'DM Sans',sans-serif; font-size:0.8rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:0.1em; color:var(--navy); margin-bottom:0.4rem;
+}
+.about-tile p { font-size:0.95rem; color:var(--muted); }
+
+/* ════════════════════════════════════════════════
+   PHOTO STRIP
+════════════════════════════════════════════════ */
+#strips { background:var(--navy); overflow:hidden; }
+.strip-row { display:grid; grid-template-columns:repeat(4,1fr); height:380px; }
+.strip-cell { position:relative; overflow:hidden; cursor:pointer; }
+.strip-cell img { width:100%; height:100%; object-fit:cover; filter:sepia(8%) brightness(0.82) saturate(0.9); transition:transform 0.7s var(--ease),filter 0.5s; }
+.strip-cell:hover img { transform:scale(1.07); filter:sepia(0%) brightness(0.95) saturate(1.1); }
+.strip-ph { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+.strip-ph-icon { font-size:3.5rem; opacity:0.18; transition:opacity 0.5s; }
+.strip-cell:hover .strip-ph-icon { opacity:0.38; }
+.s1{background:linear-gradient(145deg,#1a3c5e,#254d75)}
+.s2{background:linear-gradient(145deg,#122840,#1a3c5e)}
+.s3{background:linear-gradient(145deg,#0c1f36,#183352)}
+.s4{background:linear-gradient(145deg,#183352,#254d75)}
+.strip-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(12,31,54,0.92) 0%,transparent 55%); z-index:2; }
+.strip-label { position:absolute; bottom:0; left:0; right:0; z-index:3; padding:2.2rem 2rem; }
+.strip-eyebrow { font-size:0.7rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold-glow); margin-bottom:0.4rem; }
+.strip-caption { font-family:'Playfair Display',serif; font-size:1.25rem; font-style:italic; color:rgba(255,255,255,0.9); }
+
+/* ════════════════════════════════════════════════
+   FOUNDER
+════════════════════════════════════════════════ */
+#founder { background:var(--navy); padding:8rem 0; }
+.founder-layout { display:grid; grid-template-columns:300px 1fr; gap:7rem; align-items:center; }
+.founder-box {
+  width:280px; height:340px;
+  background:linear-gradient(150deg,rgba(184,134,11,0.1),rgba(37,77,117,0.4));
+  border:1px solid rgba(184,134,11,0.18);
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+.founder-box::after { content:''; position:absolute; bottom:-14px; right:-14px; width:100%; height:100%; border:1px solid rgba(184,134,11,0.08); z-index:-1; }
+.founder-text h2 { color:white; margin-bottom:1.5rem; }
+.founder-text p  { color:rgba(255,255,255,0.65); margin-bottom:1.4rem; font-size:1.1rem; line-height:1.9; }
+.founder-trio { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid rgba(184,134,11,0.12); margin-top:3rem; }
+.trio-block { padding:2rem; border-right:1px solid rgba(184,134,11,0.1); text-align:center; }
+.trio-block:last-child { border-right:none; }
+.trio-word { font-family:'Playfair Display',serif; font-size:1.4rem; font-style:italic; color:var(--gold-glow); display:block; margin-bottom:0.3rem; }
+.trio-block p { font-size:0.82rem; color:rgba(255,255,255,0.38); text-transform:uppercase; letter-spacing:0.13em; }
+
+/* ════════════════════════════════════════════════
+   SERVICES
+════════════════════════════════════════════════ */
+#services { background:var(--warm); }
+.svc-head { text-align:center; margin-bottom:5rem; }
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(184,134,11,0.08); }
+.svc-card {
+  background:var(--cream); padding:3.5rem 3rem;
+  position:relative; overflow:hidden; transition:all 0.4s var(--ease);
+}
+.svc-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-glow));
+  transform:scaleX(0); transform-origin:left; transition:transform 0.4s var(--ease);
+}
+.svc-card:hover { background:white; transform:translateY(-5px); box-shadow:var(--sh); z-index:1; }
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-icon { width:58px; height:58px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; margin-bottom:2rem; font-size:1.6rem; transition:all 0.35s; }
+.svc-card:hover .svc-icon { background:var(--navy); border-color:var(--navy); }
+.svc-card h3 { font-size:1.5rem; margin-bottom:1rem; }
+.svc-card > p { font-size:1rem; color:var(--muted); line-height:1.78; margin-bottom:1.5rem; }
+.svc-list { list-style:none; }
+.svc-list li {
+  font-size:0.95rem; color:var(--text);
+  padding:0.5rem 0; border-bottom:1px solid var(--warm);
+  display:flex; align-items:center; gap:0.8rem;
+}
+.svc-list li::before { content:'—'; color:var(--gold); font-weight:700; flex-shrink:0; }
+
+/* ════════════════════════════════════════════════
+   PROCESS
+════════════════════════════════════════════════ */
+#process { background:var(--navy); }
+.process-head { text-align:center; margin-bottom:5rem; }
+.process-head h2 { color:white; }
+.process-head p  { color:rgba(255,255,255,0.55); max-width:560px; margin:1.2rem auto 0; font-size:1.1rem; }
+.process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+.process-grid::before {
+  content:''; position:absolute; top:32px; left:12.5%; right:12.5%; height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,134,11,0.28),transparent);
+}
+.p-step { padding:0 1.5rem; text-align:center; }
+.p-num {
+  width:64px; height:64px; border:1px solid rgba(184,134,11,0.28); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1.6rem; font-family:'Playfair Display',serif; font-size:1.6rem;
+  color:var(--gold-glow); background:rgba(184,134,11,0.04); position:relative; z-index:1;
+}
+.p-step h4 { color:white; font-family:'DM Sans',sans-serif; font-size:0.82rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.9rem; }
+.p-step p  { font-size:0.95rem; color:rgba(255,255,255,0.52); line-height:1.72; }
+.process-badges {
+  margin-top:5rem; display:flex; align-items:center; justify-content:center;
+  gap:3rem; padding:2.5rem; border:1px solid rgba(184,134,11,0.13); flex-wrap:wrap;
+}
+.p-badge { display:flex; align-items:center; gap:1rem; }
+.p-badge-icon { font-size:1.6rem; }
+.p-badge strong { display:block; color:white; font-size:1rem; font-weight:500; }
+.p-badge span   { font-size:0.85rem; color:rgba(255,255,255,0.45); }
+
+/* ════════════════════════════════════════════════
+   HOW IT WORKS
+════════════════════════════════════════════════ */
+#how { background:var(--cream); }
+.how-head { text-align:center; margin-bottom:5rem; }
+.how-cols { display:grid; grid-template-columns:1fr 1px 1fr; align-items:start; }
+.how-divider { background:linear-gradient(to bottom,transparent,var(--border),transparent); align-self:stretch; }
+.how-col { padding:0 4rem; }
+.how-col .pill { margin-bottom:2rem; }
+.how-col h3 { margin-bottom:1.2rem; }
+.how-col > p { color:var(--muted); font-size:1.05rem; margin-bottom:2.8rem; }
+.how-steps { list-style:none; }
+.how-step  { display:flex; gap:1.4rem; padding:1.5rem 0; border-bottom:1px solid var(--warm); }
+.how-step:last-child { border-bottom:none; }
+.how-n { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--gold); line-height:1; flex-shrink:0; width:38px; }
+.how-step h4 { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.3rem; }
+.how-step p  { font-size:0.95rem; color:var(--muted); }
+.how-action  { margin-top:2.8rem; }
+
+/* ════════════════════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════════════════════ */
+#testi { background:var(--warm); }
+.testi-head { text-align:center; margin-bottom:4rem; }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(184,134,11,0.07); }
+.testi-card { background:var(--cream); padding:3.5rem; transition:all 0.4s var(--ease); }
+.testi-card:hover { background:white; box-shadow:var(--sh); }
+.testi-stars { color:var(--gold); font-size:1rem; letter-spacing:0.1em; margin-bottom:1rem; }
+.testi-mark  { font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:rgba(184,134,11,0.12); line-height:0.8; margin-bottom:1rem; display:block; }
+.testi-quote { font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:var(--navy); line-height:1.85; margin-bottom:2.2rem; }
+.testi-person { display:flex; align-items:center; gap:1rem; }
+.testi-avatar { width:50px; height:50px; border-radius:50%; background:var(--navy); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; color:var(--gold-glow); flex-shrink:0; }
+.testi-name { font-size:1rem; font-weight:600; color:var(--navy); }
+.testi-city { font-size:0.88rem; color:var(--muted); }
+
+/* ════════════════════════════════════════════════
+   FAQ
+════════════════════════════════════════════════ */
+#faq { background:var(--cream); }
+.faq-head { text-align:center; margin-bottom:4rem; }
+.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(184,134,11,0.07); max-width:1060px; margin:0 auto; }
+.faq-item { background:var(--cream); padding:2.8rem; cursor:pointer; transition:background 0.3s; }
+.faq-item:hover { background:white; }
+.faq-q { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--navy); }
+.faq-plus { font-size:1.5rem; color:var(--gold); flex-shrink:0; transition:transform 0.3s; }
+.faq-a { font-size:1rem; color:var(--muted); line-height:1.85; max-height:0; overflow:hidden; transition:max-height 0.4s ease,padding 0.3s; }
+.faq-item.open .faq-a { max-height:340px; padding-top:1.2rem; }
+.faq-item.open .faq-plus { transform:rotate(45deg); }
+
+/* ════════════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════════════ */
+#contact { background:var(--navy); }
+.contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:7rem; align-items:start; }
+.contact-left h2 { color:white; margin-bottom:1.2rem; }
+.contact-left > p { color:rgba(255,255,255,0.6); margin-bottom:3rem; font-size:1.1rem; line-height:1.9; }
+.c-methods { display:flex; flex-direction:column; gap:1.2rem; }
+.c-method { display:flex; align-items:center; gap:1.4rem; padding:1.4rem 1.6rem; border:1px solid rgba(184,134,11,0.14); transition:all 0.35s; text-decoration:none; }
+.c-method:hover { border-color:rgba(184,134,11,0.4); background:rgba(255,255,255,0.025); }
+.c-icon  { width:44px; height:44px; border:1px solid rgba(184,134,11,0.2); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.c-label { font-size:0.7rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.2rem; }
+.c-val   { color:white; font-size:1rem; }
+.form-box { background:rgba(255,255,255,0.03); border:1px solid rgba(184,134,11,0.1); padding:3.5rem; }
+.form-box h3 { color:white; margin-bottom:0.6rem; }
+.form-box > p { color:rgba(255,255,255,0.48); margin-bottom:2rem; font-size:1rem; }
+.f-tabs { display:flex; border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:2rem; }
+.f-tab {
+  padding:0.8rem 1.5rem; font-size:0.78rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
+  color:rgba(255,255,255,0.38); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.3s;
+  background:none; border-top:none; border-left:none; border-right:none; font-family:'DM Sans',sans-serif;
+}
+.f-tab.on { color:var(--gold); border-bottom-color:var(--gold); }
+.f-panel { display:none; }
+.f-panel.on { display:block; }
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+.f-row.full { grid-template-columns:1fr; }
+.f-grp { display:flex; flex-direction:column; gap:0.4rem; }
+.f-grp label { font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.45); }
+.f-grp input,.f-grp select,.f-grp textarea {
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  padding:0.85rem 1rem; color:white; font-family:'DM Sans',sans-serif; font-size:1rem;
+  outline:none; border-radius:0; -webkit-appearance:none; transition:border-color 0.3s;
+}
+.f-grp input:focus,.f-grp select:focus,.f-grp textarea:focus { border-color:var(--gold); }
+.f-grp input::placeholder,.f-grp textarea::placeholder { color:rgba(255,255,255,0.22); }
+.f-grp select option { background:var(--navy); }
+.f-grp textarea { resize:vertical; min-height:95px; }
+.f-submit {
+  width:100%; margin-top:1.5rem; padding:1.1rem;
+  background:var(--gold); color:white; font-family:'DM Sans',sans-serif;
+  font-size:0.85rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase;
+  border:none; cursor:pointer; transition:background 0.3s;
+}
+.f-submit:hover { background:var(--gold-lt); }
+.f-note { font-size:0.82rem; color:rgba(255,255,255,0.3); margin-top:1rem; line-height:1.75; }
+
+/* ════════════════════════════════════════════════
+   CAREGIVERS
+════════════════════════════════════════════════ */
+#join { background:var(--warm); }
+.join-layout { display:grid; grid-template-columns:1fr 1fr; gap:7rem; align-items:center; }
+.join-left > p { color:var(--muted); margin-bottom:2.5rem; font-size:1.1rem; }
+.join-benefits { list-style:none; display:flex; flex-direction:column; gap:1rem; margin-bottom:2.8rem; }
+.j-benefit { display:flex; align-items:flex-start; gap:1.2rem; padding:1.3rem 1.6rem; background:white; border-left:3px solid var(--gold); }
+.j-icon { color:var(--gold); flex-shrink:0; margin-top:3px; font-size:1.1rem; }
+.j-body h4 { font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); margin-bottom:0.25rem; }
+.j-body p  { font-size:0.95rem; color:var(--muted); }
+.join-reqs { background:var(--navy); padding:3.5rem; }
+.join-reqs h3 { color:white; margin-bottom:0.6rem; }
+.join-reqs > p { color:rgba(255,255,255,0.55); font-size:1rem; margin-bottom:2rem; }
+.req-list { list-style:none; }
+.req-row  { display:flex; align-items:flex-start; gap:1rem; padding:0.95rem 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+.req-row:last-child { border-bottom:none; }
+.req-tick { width:22px; height:22px; background:rgba(184,134,11,0.12); border:1px solid rgba(184,134,11,0.28); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:0.65rem; color:var(--gold); }
+.req-row span { font-size:0.95rem; color:rgba(255,255,255,0.68); line-height:1.6; }
+.req-row strong { color:white; font-weight:500; }
+
+/* ════════════════════════════════════════════════
+   RESOURCES
+════════════════════════════════════════════════ */
+#resources { background:var(--cream); padding:6rem 0; }
+.res-head { text-align:center; margin-bottom:3.5rem; }
+.res-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(184,134,11,0.07); }
+.res-card { background:var(--warm); padding:3rem; transition:all 0.35s; }
+.res-card:hover { background:white; transform:translateY(-3px); box-shadow:var(--sh); }
+.res-tag  { font-size:0.7rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1rem; }
+.res-card h4 { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:700; color:var(--navy); margin-bottom:0.9rem; }
+.res-card p  { font-size:0.95rem; color:var(--muted); line-height:1.75; }
+.res-link {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  font-size:0.78rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--navy); margin-top:1.6rem; border-bottom:1px solid var(--border); padding-bottom:2px; transition:all 0.3s;
+}
+.res-card:hover .res-link { color:var(--gold); border-color:var(--gold); }
+
+/* ════════════════════════════════════════════════
+   FOOTER — NEAR-BLACK, CRISP WHITE
+════════════════════════════════════════════════ */
+#footer {
+  background:var(--ink);
+  border-top:3px solid var(--gold);
+  padding:6rem 0 2.5rem;
+}
+.footer-cols { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:4rem; padding-bottom:4rem; border-bottom:1px solid rgba(255,255,255,0.1); }
+.f-brand-row { display:flex; align-items:center; gap:0.9rem; margin-bottom:0.5rem; }
+.f-brand-name { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900; font-style:italic; color:white; }
+.f-brand-sub  { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-glow); display:block; margin-bottom:1.5rem; }
+.f-brand p    { font-size:0.95rem; color:rgba(255,255,255,0.72); line-height:1.85; margin-bottom:0.8rem; }
+.f-brand-contact { font-size:0.95rem; color:rgba(255,255,255,0.6); line-height:2; margin-top:1rem; }
+.f-brand-contact strong { color:rgba(255,255,255,0.88); font-weight:500; }
+.f-social { display:flex; gap:0.7rem; margin-top:1.5rem; }
+.f-social a { width:38px; height:38px; border:1px solid rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-size:1rem; transition:all 0.3s; }
+.f-social a:hover { border-color:var(--gold); color:var(--gold); }
+.f-col h4 { font-size:0.7rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-glow); margin-bottom:1.5rem; font-family:'DM Sans',sans-serif; }
+.f-links  { list-style:none; display:flex; flex-direction:column; gap:0.8rem; }
+.f-links a { font-size:0.95rem; color:rgba(255,255,255,0.62); transition:color 0.3s; }
+.f-links a:hover { color:white; }
+.footer-bot { display:flex; align-items:flex-start; justify-content:space-between; padding-top:2.5rem; flex-wrap:wrap; gap:1rem; }
+.footer-legal { font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.85; max-width:700px; }
+.footer-legal strong { color:rgba(255,255,255,0.82); font-weight:600; }
+.footer-cr { font-size:0.82rem; color:rgba(255,255,255,0.38); white-space:nowrap; }
+
+/* ════════════════════════════════════════════════
+   FLOATING BUTTONS
+════════════════════════════════════════════════ */
+.float-bar { position:fixed; bottom:2rem; right:2rem; display:flex; flex-direction:column; gap:0.7rem; z-index:997; }
+.fl-btn { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; text-decoration:none; box-shadow:0 4px 20px rgba(0,0,0,0.3); transition:transform 0.3s; }
+.fl-btn:hover { transform:scale(1.12); }
+.fl-phone { background:var(--navy-mid); color:white; }
+.fl-wa    { background:#25D366; color:white; }
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════ */
+@media(max-width:1100px) {
+  #hero { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+  .hero-left { padding:9rem 2.5rem 5rem; }
+  .about-grid,.contact-layout,.join-layout,.founder-layout { grid-template-columns:1fr; gap:3.5rem; }
+  .how-cols { grid-template-columns:1fr; }
+  .how-divider { display:none; }
+  .how-col { padding:0; margin-bottom:3.5rem; }
+  .process-grid { grid-template-columns:repeat(2,1fr); gap:2.5rem; }
+  .process-grid::before { display:none; }
+  .footer-cols { grid-template-columns:1fr 1fr; }
+  .testi-grid { grid-template-columns:1fr; }
+  .res-grid { grid-template-columns:1fr; }
+  .strip-row { grid-template-columns:repeat(2,1fr); height:auto; }
+  .strip-cell { height:260px; }
+  .trust-row { display:none; }
+  .svc-grid { grid-template-columns:1fr 1fr; }
+  .founder-trio { grid-template-columns:1fr; }
+}
+@media(max-width:768px) {
+  body { font-size:16px; }
+  .nav-menu { display:none; }
+  .hbg { display:flex; }
+  /* Values ALWAYS stays 3-col — use min-width to prevent collapse */
+  .values-row { grid-template-columns:repeat(3,1fr) !important; }
+  .v-block { padding:2rem 1rem; }
+  .v-block p { font-size:0.88rem; }
+  .svc-grid,.faq-grid { grid-template-columns:1fr; }
+  .f-row { grid-template-columns:1fr; }
+  .about-tiles { grid-template-columns:1fr; }
+  .hero-ctas { flex-direction:column; align-items:flex-start; }
+  .footer-cols { grid-template-columns:1fr; }
+  .footer-bot { flex-direction:column; }
+  .strip-row { grid-template-columns:1fr; }
+  .strip-cell { height:200px; }
+  .qn-item { min-width:100px; padding:1rem 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ MOBILE NAV ══ -->
+<div class="mob-nav">
+  <button class="mob-close" onclick="this.parentElement.classList.remove('on')">✕</button>
+  <a href="javascript:void(0)" onclick="goTo('about')"    onclick="this.closest('.mob-nav').classList.remove('on')">About</a>
+  <a href="javascript:void(0)" onclick="goTo('services')" onclick="this.closest('.mob-nav').classList.remove('on')">Services</a>
+  <a href="javascript:void(0)" onclick="goTo('process')"  onclick="this.closest('.mob-nav').classList.remove('on')">Our Process</a>
+  <a href="javascript:void(0)" onclick="goTo('testi')"    onclick="this.closest('.mob-nav').classList.remove('on')">Reviews</a>
+  <a href="javascript:void(0)" onclick="goTo('faq')"      onclick="this.closest('.mob-nav').classList.remove('on')">FAQ</a>
+  <a href="javascript:void(0)" onclick="goTo('join')"     onclick="this.closest('.mob-nav').classList.remove('on')">For Caregivers</a>
+  <a href="javascript:void(0)" onclick="goTo('contact')"  onclick="this.closest('.mob-nav').classList.remove('on')">Contact</a>
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-wrap">
+
+      <!-- ════════════════════════════════════════════
+           MCC LOGO: Gold M + Two Silver Crescent C's
+                     + Gold Hand Lifting from Below
+      ════════════════════════════════════════════ -->
+      <a href="javascript:void(0)" onclick="goTo('hero')" class="nav-logo">
+        <svg class="nav-logo-svg" viewBox="0 0 80 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gM" x1="0" y1="0" x2="0" y2="38" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F5E09A"/>
+              <stop offset="50%" stop-color="#D4A520"/>
+              <stop offset="100%" stop-color="#B8860B"/>
+            </linearGradient>
+            <linearGradient id="gHand" x1="0" y1="40" x2="80" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#C8960C"/>
+              <stop offset="50%" stop-color="#E8C060"/>
+              <stop offset="100%" stop-color="#C8960C"/>
+            </linearGradient>
+            <linearGradient id="gC1" x1="42" y1="2" x2="58" y2="38" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8EFF5"/>
+              <stop offset="50%" stop-color="#C8D8E8"/>
+              <stop offset="100%" stop-color="#A0B8CC"/>
+            </linearGradient>
+            <linearGradient id="gC2" x1="60" y1="2" x2="78" y2="38" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#E8EFF5"/>
+              <stop offset="50%" stop-color="#C8D8E8"/>
+              <stop offset="100%" stop-color="#A0B8CC"/>
+            </linearGradient>
+          </defs>
+
+          <!-- ── GOLD M (standalone, large) ── -->
+          <path d="M2 36 L2 6 L14 20 L20 6 L26 20 L38 6 L38 36"
+                stroke="url(#gM)" stroke-width="3.5"
+                stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+          <!-- ── SILVER CRESCENT C 1 (left moon) ── -->
+          <!-- A thick crescent arc: open on right, closed curve on left -->
+          <path d="M56 4 Q44 10 44 21 Q44 32 56 38"
+                stroke="url(#gC1)" stroke-width="3.5"
+                stroke-linecap="round" fill="none"/>
+          <!-- Inner arc to make it a crescent -->
+          <path d="M56 10 Q50 15 50 21 Q50 27 56 32"
+                stroke="url(#gC1)" stroke-width="1.5"
+                stroke-linecap="round" fill="none" opacity="0.5"/>
+
+          <!-- ── SILVER CRESCENT C 2 (right moon, slightly offset) ── -->
+          <path d="M74 4 Q62 10 62 21 Q62 32 74 38"
+                stroke="url(#gC2)" stroke-width="3.5"
+                stroke-linecap="round" fill="none"/>
+          <path d="M74 10 Q68 15 68 21 Q68 27 74 32"
+                stroke="url(#gC2)" stroke-width="1.5"
+                stroke-linecap="round" fill="none" opacity="0.5"/>
+
+          <!-- ── GOLD HAND LIFTING FROM BELOW ── -->
+          <!-- Fingers (5 gentle peaks lifting upward) -->
+          <path d="M36 49 Q38 44 41 47 Q43 42 46 46 Q48 41 51 45 Q54 41 57 45 Q60 43 62 47 Q65 44 67 49"
+                stroke="url(#gHand)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Palm arc beneath fingers -->
+          <path d="M36 49 Q51 53 67 49"
+                stroke="url(#gHand)" stroke-width="2"
+                stroke-linecap="round" fill="none"/>
+          <!-- Wrist lines -->
+          <line x1="40" y1="52" x2="40" y2="49" stroke="url(#gHand)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="63" y1="52" x2="63" y2="49" stroke="url(#gHand)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+
+        <div class="nav-brand-stack">
+          <span class="nav-brand-name">Marin Care Connections</span>
+          <span class="nav-brand-sub">Domestic Referral Agency · Marin County, CA</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="javascript:void(0)" onclick="goTo('about')">About</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services')">Services</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('process')">Our Process</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testi')">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('faq')">FAQ</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('join')">For Caregivers</a></li>
+        <li><a href="javascript:void(0)" onclick="showPortal()" class="nb">Login / Portal</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact')" class="nc">Request a Referral</a></li>
+      </ul>
+      <button class="hbg" onclick="document.querySelector('.mob-nav').classList.add('on')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-gold-bar"></div>
+
+  <!-- LEFT CONTENT -->
+  <div class="hero-left">
+
+    <!-- AGENCY NAME — MASSIVE GOLD -->
+    <h1 class="hero-agency">Marin Care<br>Connections</h1>
+
+    <!-- CARE THAT COMES TO YOU -->
+    <div class="hero-tagline">Care That Comes to You.</div>
+
+    <p class="hero-sub">
+      Marin County families deserve more than a placement agency.
+      They deserve a partner who vets every caregiver with relentless precision,
+      negotiates fair pricing with full transparency, and delivers someone worthy
+      of their loved one's home and their family's trust.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="javascript:void(0)" onclick="goTo('contact')" class="btn btn-gold">Request a Caregiver ›</a>
+      <a href="javascript:void(0)" onclick="goTo('join')"    class="btn btn-ghost">Join Our Registry</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-row">
+        <div class="trust-item fade-in">
+          <div class="trust-num">8</div>
+          <div class="trust-label">Step Verification<br>Process</div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-num">100%</div>
+          <div class="trust-label">HCA Registry<br>Verified</div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-num">24/7</div>
+          <div class="trust-label">Available<br>Always</div>
+        </div>
+        <div class="trust-item fade-in">
+          <div class="trust-num">$0</div>
+          <div class="trust-label">Hidden Fees<br>Ever</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT — PHOTO PANEL -->
+  <!--
+    SWAP PHOTO — HERO
+    Step 1: Download from pexels.com/photo/7551685 → click Free Download
+    Step 2: Save file as: hero.jpg
+    Step 3: Put hero.jpg in same folder as this HTML file
+    Step 4: In Notepad, DELETE the <div class="ph-box">...</div> block below
+            REPLACE with this line:
+            <img src="hero.jpg" alt="Caregiver warmly assisting senior at home in Marin County">
+  -->
+  <div class="hero-right">
+    <div class="ph-box">
+      <div class="ph-icon">📸</div>
+      <div class="ph-txt">HERO PHOTO HERE<br>Free download:<br>pexels.com/photo/7551685</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ══ QUICK-NAV ══ -->
+<div id="quicknav">
+  <div class="container">
+    <div class="qn-inner">
+      <a href="javascript:void(0)" onclick="goTo('about')"    class="qn-item"><div class="qn-icon">🏠</div><div class="qn-label">About Us</div><div class="qn-sub">Our story</div></a>
+      <a href="javascript:void(0)" onclick="goTo('services')" class="qn-item"><div class="qn-icon">🤝</div><div class="qn-label">Services</div><div class="qn-sub">What we offer</div></a>
+      <a href="javascript:void(0)" onclick="goTo('process')"  class="qn-item"><div class="qn-icon">🛡️</div><div class="qn-label">Our Process</div><div class="qn-sub">8-step check</div></a>
+      <a href="javascript:void(0)" onclick="goTo('how')"      class="qn-item"><div class="qn-icon">📋</div><div class="qn-label">How It Works</div><div class="qn-sub">Step by step</div></a>
+      <a href="javascript:void(0)" onclick="goTo('testi')"    class="qn-item"><div class="qn-icon">⭐</div><div class="qn-label">Reviews</div><div class="qn-sub">Family stories</div></a>
+      <a href="javascript:void(0)" onclick="goTo('faq')"      class="qn-item"><div class="qn-icon">💬</div><div class="qn-label">FAQ</div><div class="qn-sub">Your questions</div></a>
+      <a href="javascript:void(0)" onclick="goTo('join')"     class="qn-item"><div class="qn-icon">🌟</div><div class="qn-label">For Caregivers</div><div class="qn-sub">Join registry</div></a>
+      <a href="javascript:void(0)" onclick="goTo('contact')"  class="qn-item"><div class="qn-icon">📞</div><div class="qn-label">Contact</div><div class="qn-sub">(415) 326-3507</div></a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DISCLOSURE ══ -->
+<div id="disc">
+  <div class="container">
+    <div class="disc-row">
+      <div class="disc-dot">i</div>
+      <p class="disc-text">
+        <strong>California Statutory Disclosure — Civil Code § 1812.5095:</strong>
+        Marin Care Connections LLC is a <strong>Domestic Referral Agency</strong>, not a Home Care Organization or employer.
+        We are not the employer of any referred domestic worker. Depending on your working relationship with a referred caregiver,
+        you may hold employer obligations under California and federal law, including payroll taxes and workers' compensation.
+        Please consult a qualified tax or legal professional.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VALUES ══ -->
+<div id="values" class="section-sm">
+  <div class="container">
+    <div class="values-row">
+      <div class="v-block fade-in">
+        <div class="v-icon">🤲</div>
+        <h4>Dignity First</h4>
+        <p>Every person in our care ecosystem — client, caregiver, and family — is treated with the full honor they have earned simply by being human.</p>
+      </div>
+      <div class="v-block fade-in">
+        <div class="v-icon">🔬</div>
+        <h4>Uncompromising Rigor</h4>
+        <p>Eight verification steps. No shortcuts. No exceptions. The families of Marin County deserve absolute certainty in every person we refer.</p>
+      </div>
+      <div class="v-block fade-in">
+        <div class="v-icon">💡</div>
+        <h4>Radical Transparency</h4>
+        <p>Every rate negotiated openly. Every document explained completely. You will always know exactly what you are receiving — and what you are paying — before care begins.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-in">
+        <div class="about-card">
+          <p class="about-card-quote">"The finest care is not found in a brochure. It lives in the space between a caregiver's patient presence and a family's <span class="about-accent">quiet exhale of relief.</span>"</p>
+          <span class="about-source">— Marin Care Connections · Founded in Novato, CA</span>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <span class="eyebrow">Who We Are</span>
+        <div class="rule"></div>
+        <h2>A Connection Built on Something Real</h2>
+        <p>Marin Care Connections was built by someone who has sat on both sides of this work — as a caregiver who walked into strangers' homes during their most vulnerable hours, and as a professional who watched families struggle to find trustworthy support through agencies that prioritized process over people.</p>
+        <p>We are a licensed Domestic Referral Agency operating under California Civil Code § 1812.5095. Our role is to find, verify, and connect — then step back and let the human relationship between caregiver and family become exactly what it should be.</p>
+        <div class="about-tiles">
+          <div class="about-tile"><h4>Our Ground</h4><p>Novato-based, Marin County-focused, Bay Area available.</p></div>
+          <div class="about-tile"><h4>Our Model</h4><p>Independent caregivers. Agency-negotiated rates. Your peace of mind.</p></div>
+          <div class="about-tile"><h4>Our Standard</h4><p>CA HCA certified, DOJ/FBI cleared, insured. No exceptions.</p></div>
+          <div class="about-tile"><h4>Our Promise</h4><p>Complete rate transparency before a single shift begins.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHOTO STRIP ══ -->
+<div id="strips">
+  <div class="strip-row">
+    <!--SWAP PHOTO PANEL 1: pexels.com/photo/3768131 → panel1.jpg → replace <div class="strip-ph s1">...</div> with: <img src="panel1.jpg" alt="Companion care">-->
+    <div class="strip-cell"><div class="strip-ph s1"><div class="strip-ph-icon">🤝</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Companion Care</div><div class="strip-caption">Presence that matters</div></div></div>
+    <!--SWAP PHOTO PANEL 2: pexels.com/photo/4386467 → panel2.jpg → replace <div class="strip-ph s2">...</div> with: <img src="panel2.jpg" alt="Personal care">-->
+    <div class="strip-cell"><div class="strip-ph s2"><div class="strip-ph-icon">🧡</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Personal Care</div><div class="strip-caption">Dignity in every gesture</div></div></div>
+    <!--SWAP PHOTO PANEL 3: pexels.com/photo/7551673 → panel3.jpg → replace <div class="strip-ph s3">...</div> with: <img src="panel3.jpg" alt="Memory care">-->
+    <div class="strip-cell"><div class="strip-ph s3"><div class="strip-ph-icon">🧠</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
+    <!--SWAP PHOTO PANEL 4: pexels.com/photo/6647037 → panel4.jpg → replace <div class="strip-ph s4">...</div> with: <img src="panel4.jpg" alt="Live-in care">-->
+    <div class="strip-cell"><div class="strip-ph s4"><div class="strip-ph-icon">🌙</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Live-In Care</div><div class="strip-caption">There when the night is long</div></div></div>
+  </div>
+</div>
+
+<!-- ══ FOUNDER ══ -->
+<section id="founder">
+  <div class="container">
+    <div class="founder-layout">
+      <div class="founder-frame fade-in">
+        <div class="founder-box">
+          <!-- Large MCC mark — same logo concept scaled up -->
+          <svg width="180" height="120" viewBox="0 0 80 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fgM" x1="0" y1="0" x2="0" y2="38" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F5E09A"/><stop offset="50%" stop-color="#D4A520"/><stop offset="100%" stop-color="#B8860B"/>
+              </linearGradient>
+              <linearGradient id="fgH" x1="0" y1="40" x2="80" y2="52" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C8960C"/><stop offset="50%" stop-color="#E8C060"/><stop offset="100%" stop-color="#C8960C"/>
+              </linearGradient>
+              <linearGradient id="fgC1" x1="42" y1="2" x2="58" y2="38" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E8EFF5"/><stop offset="50%" stop-color="#C8D8E8"/><stop offset="100%" stop-color="#A0B8CC"/>
+              </linearGradient>
+              <linearGradient id="fgC2" x1="60" y1="2" x2="78" y2="38" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E8EFF5"/><stop offset="50%" stop-color="#C8D8E8"/><stop offset="100%" stop-color="#A0B8CC"/>
+              </linearGradient>
+            </defs>
+            <path d="M2 36 L2 6 L14 20 L20 6 L26 20 L38 6 L38 36" stroke="url(#fgM)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M56 4 Q44 10 44 21 Q44 32 56 38" stroke="url(#fgC1)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M56 10 Q50 15 50 21 Q50 27 56 32" stroke="url(#fgC1)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            <path d="M74 4 Q62 10 62 21 Q62 32 74 38" stroke="url(#fgC2)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M74 10 Q68 15 68 21 Q68 27 74 32" stroke="url(#fgC2)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+            <path d="M36 49 Q38 44 41 47 Q43 42 46 46 Q48 41 51 45 Q54 41 57 45 Q60 43 62 47 Q65 44 67 49" stroke="url(#fgH)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M36 49 Q51 53 67 49" stroke="url(#fgH)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <div class="founder-text fade-in">
+        <span class="eyebrow" style="color:var(--gold-glow)">Our Origin</span>
+        <div class="rule"></div>
+        <h2 style="color:white">Built from the Inside of This Work</h2>
+        <p>Marin Care Connections was not built in a boardroom. It was built by someone who clocked into strangers' homes in the middle of the night, sat beside people in their most fragile moments, and understood — viscerally — what it means for a family to place their trust in a caregiver they barely know.</p>
+        <p>That experience drives every policy we write, every caregiver we verify, and every conversation we have with a family calling us in a moment of real need. We know this work from the ground up — and that is something no franchise or corporate chain can replicate.</p>
+        <p>We are Marin County. We know these streets, these families, and the standard they rightfully expect. We built this agency to meet it — every single time.</p>
+        <div class="founder-trio">
+          <div class="trio-block"><span class="trio-word">Genuine</span><p>Authentic in all things</p></div>
+          <div class="trio-block"><span class="trio-word">Accountable</span><p>We own every outcome</p></div>
+          <div class="trio-block"><span class="trio-word">Steadfast</span><p>Present when it counts</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="svc-head fade-in">
+      <span class="eyebrow">What We Refer</span>
+      <div class="rule c"></div>
+      <h2>Care Services for Marin Families</h2>
+      <p style="color:var(--muted);max-width:540px;margin:1rem auto 0">All services are non-medical, performed by independent, pre-verified caregivers from our registry.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fade-in"><div class="svc-icon">🤝</div><h3>Companion Care</h3><p>Genuine presence and social engagement for seniors living alone or recovering at home.</p><ul class="svc-list"><li>Meaningful conversation & engagement</li><li>Appointment accompaniment</li><li>Hobbies, reading & cognitive activities</li><li>Supervised social outings</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🧡</div><h3>Personal Care</h3><p>Respectful, professional assistance with daily living — preserving independence with grace.</p><ul class="svc-list"><li>Bathing & personal hygiene</li><li>Dressing & grooming assistance</li><li>Mobility support & safe transfers</li><li>Medication reminders (non-medical)</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🍽️</div><h3>Household Support</h3><p>Light household management so family members can focus on presence, not logistics.</p><ul class="svc-list"><li>Nutritious meal preparation</li><li>Light housekeeping & laundry</li><li>Grocery runs & errand support</li><li>Transportation to appointments</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🌙</div><h3>Live-In & 24-Hour Care</h3><p>Continuous, reliable presence for families who need round-the-clock assurance.</p><ul class="svc-list"><li>24-hour awake or live-in shifts</li><li>Overnight monitoring & support</li><li>Emergency response presence</li><li>Family caregiver respite relief</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🧠</div><h3>Memory & Specialized Care</h3><p>Caregivers with deep, specialized experience in progressive and neurological conditions.</p><ul class="svc-list"><li>Alzheimer's & Dementia care</li><li>Parkinson's & neurological support</li><li>Hospice & palliative companion care</li><li>Long-term progressive conditions</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">⚡</div><h3>Urgent & Discharge Placements</h3><p>When a hospital calls and a family needs care in hours, not days — we move fast.</p><ul class="svc-list"><li>Same-day hospital discharge care</li><li>Short-notice shift coverage</li><li>Post-surgical recovery support</li><li>Respite & trial placements</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section id="process" class="section">
+  <div class="container">
+    <div class="process-head fade-in">
+      <span class="eyebrow" style="color:var(--gold-glow)">Every Caregiver. Every Time.</span>
+      <div class="rule c"></div>
+      <h2>Our Verification Standard</h2>
+      <p>Eight steps. Zero shortcuts. The families of Marin County deserve nothing less than absolute certainty.</p>
+    </div>
+    <div class="process-grid">
+      <div class="p-step fade-in"><div class="p-num">01</div><h4>HCA Registry</h4><p>Active California HCA registration confirmed live through CDSS before any placement.</p></div>
+      <div class="p-step fade-in"><div class="p-num">02</div><h4>Background Check</h4><p>DOJ & FBI Live Scan fingerprint clearance. Every applicant. No conditional approvals.</p></div>
+      <div class="p-step fade-in"><div class="p-num">03</div><h4>TB Testing</h4><p>Negative TB results, dated within 24 months, reviewed and archived before first shift.</p></div>
+      <div class="p-step fade-in"><div class="p-num">04</div><h4>Insurance Verified</h4><p>Personal liability confirmed — minimum $1M per occurrence, $6M aggregate.</p></div>
+      <div class="p-step fade-in"><div class="p-num">05</div><h4>ID & Authorization</h4><p>Government-issued photo ID and legal U.S. work authorization reviewed and filed.</p></div>
+      <div class="p-step fade-in"><div class="p-num">06</div><h4>References Checked</h4><p>Two professional references contacted, verified, and documented before approval.</p></div>
+      <div class="p-step fade-in"><div class="p-num">07</div><h4>Agreements Signed</h4><p>Full Referral Agreement and Mutual Arbitration Agreement executed prior to placement.</p></div>
+      <div class="p-step fade-in"><div class="p-num">08</div><h4>Rate Confirmed</h4><p>Caregiver rate presented and accepted before every single shift. No surprises. Ever.</p></div>
+    </div>
+    <div class="process-badges fade-in">
+      <div class="p-badge"><span class="p-badge-icon">🛡️</span><div><strong>CA HCA Registry</strong><span>State-registered & live-verified</span></div></div>
+      <div class="p-badge"><span class="p-badge-icon">🔍</span><div><strong>DOJ / FBI Cleared</strong><span>Live Scan fingerprint check</span></div></div>
+      <div class="p-badge"><span class="p-badge-icon">📋</span><div><strong>Fully Insured</strong><span>$1M–$6M personal liability</span></div></div>
+      <div class="p-badge"><span class="p-badge-icon">⚖️</span><div><strong>CA Law Compliant</strong><span>Civil Code § 1812.5095</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section id="how" class="section" style="background:var(--warm)">
+  <div class="container">
+    <div class="how-head fade-in">
+      <span class="eyebrow">Two Doors. One Standard.</span>
+      <div class="rule c"></div>
+      <h2>How It Works</h2>
+    </div>
+    <div class="how-cols">
+      <div class="how-col fade-in">
+        <div class="pill">For Families</div>
+        <h3>Requesting a Caregiver</h3>
+        <p>From first contact to first shift — we handle the credentialing, matching, and pricing so you can focus entirely on your loved one.</p>
+        <ol class="how-steps">
+          <li class="how-step"><span class="how-n">1</span><div><h4>Tell Us What You Need</h4><p>Submit our brief intake form — care type, schedule, location in Marin. We listen carefully.</p></div></li>
+          <li class="how-step"><span class="how-n">2</span><div><h4>We Negotiate Your Rate</h4><p>Agency handles the full pricing conversation. You receive a clear, itemized quote before anything proceeds.</p></div></li>
+          <li class="how-step"><span class="how-n">3</span><div><h4>Meet and Approve Your Match</h4><p>We present a verified caregiver profile for your review. You have the final say — always.</p></div></li>
+          <li class="how-step"><span class="how-n">4</span><div><h4>Care Begins</h4><p>Sign your Client Service Agreement digitally. Scheduling managed through our secure partner platform.</p></div></li>
+        </ol>
+        <div class="how-action"><a href="javascript:void(0)" onclick="goTo('contact')" class="btn btn-navy">Request a Referral ›</a></div>
+      </div>
+      <div class="how-divider"></div>
+      <div class="how-col fade-in">
+        <div class="pill">For Caregivers</div>
+        <h3>Joining the Registry</h3>
+        <p>We bring the clients. We handle the negotiations. You review the rate offered for each shift and decide — complete professional freedom.</p>
+        <ol class="how-steps">
+          <li class="how-step"><span class="how-n">1</span><div><h4>Submit Your Application</h4><p>Complete our onboarding form with credentials, availability, and care specialties.</p></div></li>
+          <li class="how-step"><span class="how-n">2</span><div><h4>Document Verification</h4><p>HCA ID, TB results, background clearance, and insurance — each reviewed and filed by our team.</p></div></li>
+          <li class="how-step"><span class="how-n">3</span><div><h4>We Present Each Opportunity</h4><p>When a client match comes in, we contact you with full shift details and your caregiver rate. Accept or decline freely.</p></div></li>
+          <li class="how-step"><span class="how-n">4</span><div><h4>Work and Receive Payment</h4><p>Complete the shift, clock out through our platform, and receive secure, on-time payment.</p></div></li>
+        </ol>
+        <div class="how-action"><a href="javascript:void(0)" onclick="goTo('join')" class="btn btn-navy">Join the Registry ›</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testi" class="section">
+  <div class="container">
+    <div class="testi-head fade-in">
+      <span class="eyebrow">From the Families We Serve</span>
+      <div class="rule c"></div>
+      <h2>What Marin Families Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-in"><div class="testi-stars">★★★★★</div><span class="testi-mark">"</span><p class="testi-quote">They connected us with a caregiver who understood my mother's rhythm before the first week was over. The process was clear, the pricing made sense, and for the first time in months I slept through the night knowing she was safe.</p><div class="testi-person"><div class="testi-avatar">S</div><div><div class="testi-name">Sally L.</div><div class="testi-city">Mill Valley, CA</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars">★★★★★</div><span class="testi-mark">"</span><p class="testi-quote">My father was discharged from MarinHealth on a Thursday afternoon. By Friday morning, a verified, kind, experienced caregiver was in his home. I don't know how they moved that fast — but I will never forget it.</p><div class="testi-person"><div class="testi-avatar">R</div><div><div class="testi-name">Robert M.</div><div class="testi-city">San Rafael, CA</div></div></div></div>
+      <div class="testi-card fade-in"><div class="testi-stars">★★★★★</div><span class="testi-mark">"</span><p class="testi-quote">Other agencies felt like they were selling us something. This felt like someone who actually understood what we were going through. The caregiver they referred has become part of our family's story — and that is not something you manufacture.</p><div class="testi-person"><div class="testi-avatar">D</div><div><div class="testi-name">Diane T.</div><div class="testi-city">Tiburon, CA</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" class="section" style="background:var(--warm)">
+  <div class="container">
+    <div class="faq-head fade-in"><span class="eyebrow">Questions & Answers</span><div class="rule c"></div><h2>What Families Ask</h2></div>
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What exactly is a Domestic Referral Agency? <span class="faq-plus">+</span></div><div class="faq-a">A Domestic Referral Agency is a licensed matchmaker — we identify, verify, and connect independent caregivers with families seeking home care. We are not the employer of any caregiver we refer. This model, governed by California Civil Code § 1812.5095, gives families direct access to qualified professionals while caregivers retain full independence.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Who handles the pricing? <span class="faq-plus">+</span></div><div class="faq-a">We do. Agency negotiates the service fee directly with you and presents a complete, transparent quote before any caregiver is confirmed. Our referral fee — never more than 35% of the total — is already included. You will always know exactly what you are paying before care begins. You never negotiate with the caregiver directly.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Who is the caregiver's legal employer? <span class="faq-plus">+</span></div><div class="faq-a">The referred caregiver is an independent contractor and is self-employed. Marin Care Connections is not their employer. Depending on the degree of direction you exercise over their work, you as a client household may have certain employer obligations under California and federal law. We strongly recommend consulting a tax professional.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What does your 8-step verification include? <span class="faq-plus">+</span></div><div class="faq-a">California HCA Registry verification through CDSS, DOJ/FBI Live Scan clearance, TB test results (within 24 months), personal liability insurance confirmation ($1M–$6M), government ID review, work authorization check, two professional reference verifications, and a signed Referral Agreement. Every step, every caregiver, every time.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Can we keep the same caregiver consistently? <span class="faq-plus">+</span></div><div class="faq-a">Absolutely — and we encourage it, especially for memory care and long-term placements where consistency is not just comfort, it is a clinical necessity. Once a match works, we do everything in our power to maintain that relationship for as long as it serves your family.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Do your caregivers provide medical care? <span class="faq-plus">+</span></div><div class="faq-a">No. All referrals through Marin Care Connections are strictly non-medical domestic services — personal care, companion care, light household management, meal preparation, medication reminders, and transportation. For skilled nursing or medical treatment, a licensed Home Care Organization or medical professional is required.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How quickly can you place someone? <span class="faq-plus">+</span></div><div class="faq-a">In most cases, 24–48 hours from a completed intake request. For urgent hospital discharge situations or same-day needs, call us directly at (415) 326-3507. We move as fast as the situation demands — because the moments that require speed are usually the moments that matter most.</div></div>
+      <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Which areas of Marin do you serve? <span class="faq-plus">+</span></div><div class="faq-a">All of Marin County — Novato, San Rafael, Mill Valley, Sausalito, Tiburon, Belvedere, Corte Madera, Larkspur, Ross, San Anselmo, and Fairfax. We also maintain caregivers available in parts of Sonoma County and the East Bay when needed.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-left fade-in">
+        <span class="eyebrow" style="color:var(--gold-glow)">We Are Here</span>
+        <div class="rule"></div>
+        <h2>Reach Us Any Time</h2>
+        <p>Care needs do not wait for business hours. We respond across every channel because the families who call us deserve someone who answers.</p>
+        <div class="c-methods">
+          <a href="tel:4153263507" class="c-method"><div class="c-icon">📞</div><div><span class="c-label">Call or Text</span><span class="c-val">(415) 326-3507</span></div></a>
+          <a href="https://wa.me/12533160378" target="_blank" class="c-method"><div class="c-icon">💬</div><div><span class="c-label">WhatsApp</span><span class="c-val">Message us on WhatsApp</span></div></a>
+          <a href="mailto:Marincareconnections@gmail.com" class="c-method"><div class="c-icon">✉️</div><div><span class="c-label">Email</span><span class="c-val">Marincareconnections@gmail.com</span></div></a>
+          <div class="c-method"><div class="c-icon">📍</div><div><span class="c-label">Office</span><span class="c-val">1942 Center Road, Novato CA 94947</span></div></div>
+        </div>
+      </div>
+      <div class="form-box fade-in">
+        <h3>Get In Touch</h3>
+        <p>We respond within a few hours. Fill out the form and we will reach you directly.</p>
+        <div class="f-tabs">
+          <button class="f-tab on" onclick="switchTab(this,'cf')">I Need a Caregiver</button>
+          <button class="f-tab" onclick="switchTab(this,'jf')">I Am a Caregiver</button>
+        </div>
+        <div id="cf" class="f-panel on">
+          <form name="family-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="fSubmit(event,'c')">
+          <input type="hidden" name="form-name" value="family-inquiry">
+          <input type="hidden" name="bot-field" style="display:none">
+            <div class="f-row"><div class="f-grp"><label>Your Name *</label><input type="text" placeholder="Full name" required></div><div class="f-grp"><label>Phone *</label><input type="tel" placeholder="(xxx) xxx-xxxx" required></div></div>
+            <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" placeholder="your@email.com" required></div><div class="f-grp"><label>City / Area</label><input type="text" placeholder="e.g. Mill Valley, Tiburon"></div></div>
+            <div class="f-row"><div class="f-grp"><label>Care Type</label><select><option value="">Select</option><option>Companion Care</option><option>Personal Care</option><option>Live-In / 24-Hour</option><option>Overnight Care</option><option>Alzheimer's / Dementia</option><option>Post-Surgery Recovery</option><option>Hospice Support</option><option>Urgent / Discharge</option><option>Other</option></select></div><div class="f-grp"><label>How Soon?</label><select><option value="">Select</option><option>Immediately / Urgent</option><option>Within 1 week</option><option>Within 2–4 weeks</option><option>Exploring options</option></select></div></div>
+            <div class="f-row full"><div class="f-grp"><label>Tell Us About Your Needs</label><textarea placeholder="Describe your care situation, schedule, and anything we should know..."></textarea></div></div>
+            <button type="submit" class="f-submit">Submit Referral Request</button>
+            <p class="f-note">By submitting you agree to our Client Service Agreement terms. We respond within a few hours with a verified caregiver match and transparent pricing — before any commitment is made.</p>
+          </form>
+        </div>
+        <div id="jf" class="f-panel">
+          <form name="caregiver-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="fSubmit(event,'j')">
+          <input type="hidden" name="form-name" value="caregiver-application">
+          <input type="hidden" name="bot-field" style="display:none">
+            <div class="f-row"><div class="f-grp"><label>Full Legal Name *</label><input type="text" placeholder="Last, First" required></div><div class="f-grp"><label>Phone *</label><input type="tel" placeholder="(xxx) xxx-xxxx" required></div></div>
+            <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" placeholder="your@email.com" required></div><div class="f-grp"><label>HCA Registry ID</label><input type="text" placeholder="If active"></div></div>
+            <div class="f-row"><div class="f-grp"><label>Years of Experience</label><select><option>Under 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select></div><div class="f-grp"><label>Availability</label><select><option>Full-time</option><option>Part-time</option><option>Live-in shifts</option><option>Overnight only</option><option>Flexible</option></select></div></div>
+            <div class="f-row full"><div class="f-grp"><label>Personal Liability Insurance ($1M/$6M)?</label><select><option>Yes — currently insured</option><option>No — need to obtain it</option><option>Not sure</option></select></div></div>
+            <div class="f-row full"><div class="f-grp"><label>Specialties, Certifications & Notes</label><textarea placeholder="Certifications, languages spoken, care specialties, anything relevant..."></textarea></div></div>
+            <button type="submit" class="f-submit">Submit Registry Application</button>
+            <p class="f-note">Submitting confirms you understand you are applying as an independent contractor, not an employee of Marin Care Connections LLC. Full document verification required before approval.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAREGIVERS ══ -->
+<section id="join" class="section" style="background:var(--warm)">
+  <div class="container">
+    <div class="join-layout">
+      <div class="join-left fade-in">
+        <span class="eyebrow">For Independent Caregivers</span>
+        <div class="rule"></div>
+        <h2>Your Craft.<br>Your Clock.<br>Your Career.</h2>
+        <p>We are not your employer and we never will be. We are your referral partner — bringing you verified Marin County clients and presenting a clear rate for every shift before you commit to anything.</p>
+        <ul class="join-benefits">
+          <li class="j-benefit"><span class="j-icon">✦</span><div class="j-body"><h4>We Handle the Rate Conversation</h4><p>Agency negotiates with every client. You receive a clear caregiver rate before each shift — accept or walk away. Always your call.</p></div></li>
+          <li class="j-benefit"><span class="j-icon">✦</span><div class="j-body"><h4>Complete Shift Autonomy</h4><p>Accept any referral. Decline any referral. Set your geographic limits, schedule, and care preferences. No pressure, ever.</p></div></li>
+          <li class="j-benefit"><span class="j-icon">✦</span><div class="j-body"><h4>Marin County's Finest Households</h4><p>Work with families who understand the value of quality care and treat caregivers with the dignity they have earned.</p></div></li>
+          <li class="j-benefit"><span class="j-icon">✦</span><div class="j-body"><h4>Secure, Punctual Payments</h4><p>Every payment processed through our verified platform. No invoice chasing, no confusion, no delay.</p></div></li>
+        </ul>
+        <a href="javascript:void(0)" onclick="goTo('contact')" class="btn btn-gold">Apply to Join Our Registry ›</a>
+      </div>
+      <div class="join-reqs fade-in">
+        <h3>Registry Requirements</h3>
+        <p>Every caregiver must satisfy all of the following before receiving any referral.</p>
+        <ul class="req-list">
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Active California HCA Registry ID</strong> — verified through CDSS</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>DOJ / FBI Background Check</strong> — Live Scan clearance required</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Negative TB Test Results</strong> — dated within 24 months</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Personal Liability Insurance</strong> — $1,000,000 / $6,000,000 minimum</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Government-Issued Photo ID</strong> — current and valid</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Completed W-9 Form</strong> — required for 1099-NEC tax reporting</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Signed Referral Agreement</strong> — domestic worker contract required</span></li>
+          <li class="req-row"><div class="req-tick">✓</div><span><strong>Auto Insurance</strong> — required if transporting clients in your vehicle</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESOURCES ══ -->
+<section id="resources">
+  <div class="container">
+    <div class="res-head fade-in"><span class="eyebrow">Senior Care Guidance</span><div class="rule c"></div><h2>Resources for Families</h2></div>
+    <div class="res-grid">
+      <div class="res-card fade-in"><span class="res-tag">Family Guide</span><h4>Navigating Home Care in Marin County</h4><p>A practical guide for families beginning the care conversation — from understanding what level of support your loved one needs to knowing exactly what to ask any agency before signing anything.</p><a href="javascript:void(0)" onclick="goTo('contact')" class="res-link">Request This Guide ›</a></div>
+      <div class="res-card fade-in"><span class="res-tag">Know Your Rights</span><h4>Referral Agency vs. Home Care Organization</h4><p>Clear, plain-language breakdown of the two models, the tax and employment implications for your household, and why transparency about this distinction is non-negotiable.</p><a href="javascript:void(0)" onclick="goTo('faq')" class="res-link">Read Our FAQ ›</a></div>
+      <div class="res-card fade-in"><span class="res-tag">For Caregivers</span><h4>Building a Professional Independent Caregiving Practice in California</h4><p>From HCA registration and liability insurance to managing your schedule and income — a comprehensive starting point for California caregivers building their own independent business.</p><a href="javascript:void(0)" onclick="goTo('join')" class="res-link">Join Our Registry ›</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER — NEAR-BLACK, FULLY READABLE ══ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div class="f-brand">
+        <div class="f-brand-row">
+          <svg width="32" height="22" viewBox="0 0 80 52" fill="none">
+            <path d="M2 36 L2 6 L14 20 L20 6 L26 20 L38 6 L38 36" stroke="#D4A520" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M56 4 Q44 10 44 21 Q44 32 56 38" stroke="#C8D8E8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M74 4 Q62 10 62 21 Q62 32 74 38" stroke="#C8D8E8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M36 49 Q51 53 67 49" stroke="#D4A520" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span class="f-brand-name">Marin Care Connections</span>
+        </div>
+        <span class="f-brand-sub">Domestic Referral Agency · Novato, CA · Est. 2026</span>
+        <p>Connecting Marin County families with exceptional independent caregivers. Every caregiver rigorously verified, fully insured, and presented with total pricing transparency — before care begins.</p>
+        <div class="f-brand-contact">
+          <strong>(415) 326-3507</strong><br>
+          Marincareconnections@gmail.com<br>
+          1942 Center Road, Novato CA 94947
+        </div>
+        <div class="f-social">
+          <a href="javascript:void(0)" title="Instagram">📷</a>
+          <a href="javascript:void(0)" title="Facebook">👥</a>
+          <a href="javascript:void(0)" title="Yelp">⭐</a>
+          <a href="javascript:void(0)" title="LinkedIn">💼</a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul class="f-links">
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Companion Care</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Personal Care</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Live-In & 24-Hour</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Memory & Dementia</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Respite Care</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Urgent Placements</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul class="f-links">
+          <li><a href="javascript:void(0)" onclick="goTo('about')">About Us</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('founder')">Our Story</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('process')">Verification Process</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('testi')">Client Reviews</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('resources')">Family Resources</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('faq')">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul class="f-links">
+          <li><a href="tel:4153263507">(415) 326-3507</a></li>
+          <li><a href="mailto:Marincareconnections@gmail.com">Email Us</a></li>
+          <li><a href="https://wa.me/12533160378">WhatsApp</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('contact')">Request a Referral</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('join')">Join Our Registry</a></li>
+          <li><a href="javascript:void(0)" onclick="showPortal()">Login / Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p class="footer-legal">
+        <strong>Legal Disclosure:</strong> Marin Care Connections LLC is a Domestic Referral Agency licensed under California Civil Code § 1812.5095. We are not the employer of any referred domestic worker. Client household employer obligations may apply. All referred services are non-medical. Agency referral fees do not exceed 35% of gross service fees. © 2026 Marin Care Connections LLC. All rights reserved.
+      </p>
+      <p class="footer-cr">Novato, California · Serving All of Marin County</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FLOATING BUTTONS ══ -->
+<div class="float-bar">
+  <a href="tel:4153263507" class="fl-btn fl-phone" title="Call (415) 326-3507">📞</a>
+  <a href="https://wa.me/12533160378" target="_blank" class="fl-btn fl-wa" title="WhatsApp">💬</a>
+</div>
+
+<!-- ══ PORTAL MODAL ══ -->
+<div id="portal-modal" style="display:none;position:fixed;inset:0;background:rgba(6,13,22,0.92);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:var(--navy-mid);border:1px solid var(--gold);padding:3.5rem;max-width:480px;width:90%;position:relative;text-align:center;">
+    <button onclick="document.getElementById('portal-modal').style.display='none'" style="position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+    <div style="font-size:3rem;margin-bottom:1rem;">🌙</div>
+    <h3 style="color:white;font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;">Client Portal</h3>
+    <div style="width:48px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-glow));margin:0 auto 1.5rem;"></div>
+    <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.85;margin-bottom:2rem;">Our secure client portal is launching very soon. Families and caregivers will be able to manage schedules, documents, and payments all in one place.</p>
+    <p style="color:var(--gold-glow);font-size:0.88rem;margin-bottom:2rem;font-style:italic;">In the meantime, reach us directly:</p>
+    <a href="tel:4153263507" style="display:block;background:var(--gold);color:white;padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;">(415) 326-3507</a>
+    <a href="mailto:Marincareconnections@gmail.com" style="display:block;border:1px solid rgba(184,134,11,0.4);color:var(--gold-glow);padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;">Marincareconnections@gmail.com</a>
+  </div>
+</div>
+
+<script>
+function goTo(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('ink',window.scrollY>50));
+
+const obs=new IntersectionObserver((es)=>{
+  es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),i*60);obs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+function showPortal(){
+  const m=document.getElementById('portal-modal');
+  m.style.display='flex';
+}
+
+// Close modal clicking outside
+document.getElementById('portal-modal').addEventListener('click',function(e){
+  if(e.target===this) this.style.display='none';
+});
+
+function toggleFaq(el){
+  const o=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!o)el.classList.add('open');
+}
+
+function switchTab(b,id){
+  document.querySelectorAll('.f-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.f-panel').forEach(p=>p.classList.remove('on'));
+  b.classList.add('on');
+  document.getElementById(id).classList.add('on');
+}
+
+function fSubmit(e,t){
+  // Allow Netlify to receive the real submission
+  const b=e.target.querySelector('.f-submit');
+  b.textContent="✓ Received — We'll be in touch shortly";
+  b.style.background='#254D75';
+  b.disabled=true;
+  // Don't preventDefault — let Netlify handle it
+  setTimeout(()=>{
+    b.textContent=t==='c'?'Submit Referral Request':'Submit Registry Application';
+    b.style.background='';
+    b.disabled=false;
+  },4000);
+}
+</script>
+</body>
+</html>
