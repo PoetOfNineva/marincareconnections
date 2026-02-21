@@ -690,66 +690,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
                      + Gold Hand Lifting from Below
       ════════════════════════════════════════════ -->
       <a href="javascript:void(0)" onclick="goTo('hero')" class="nav-logo">
-        <svg class="nav-logo-svg" viewBox="0 0 80 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="gM" x1="0" y1="0" x2="0" y2="38" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#F5E09A"/>
-              <stop offset="50%" stop-color="#D4A520"/>
-              <stop offset="100%" stop-color="#B8860B"/>
-            </linearGradient>
-            <linearGradient id="gHand" x1="0" y1="40" x2="80" y2="52" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#C8960C"/>
-              <stop offset="50%" stop-color="#E8C060"/>
-              <stop offset="100%" stop-color="#C8960C"/>
-            </linearGradient>
-            <linearGradient id="gC1" x1="42" y1="2" x2="58" y2="38" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#E8EFF5"/>
-              <stop offset="50%" stop-color="#C8D8E8"/>
-              <stop offset="100%" stop-color="#A0B8CC"/>
-            </linearGradient>
-            <linearGradient id="gC2" x1="60" y1="2" x2="78" y2="38" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#E8EFF5"/>
-              <stop offset="50%" stop-color="#C8D8E8"/>
-              <stop offset="100%" stop-color="#A0B8CC"/>
-            </linearGradient>
-          </defs>
-
-          <!-- ── GOLD M (standalone, large) ── -->
-          <path d="M2 36 L2 6 L14 20 L20 6 L26 20 L38 6 L38 36"
-                stroke="url(#gM)" stroke-width="3.5"
-                stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-
-          <!-- ── SILVER CRESCENT C 1 (left moon) ── -->
-          <!-- A thick crescent arc: open on right, closed curve on left -->
-          <path d="M56 4 Q44 10 44 21 Q44 32 56 38"
-                stroke="url(#gC1)" stroke-width="3.5"
-                stroke-linecap="round" fill="none"/>
-          <!-- Inner arc to make it a crescent -->
-          <path d="M56 10 Q50 15 50 21 Q50 27 56 32"
-                stroke="url(#gC1)" stroke-width="1.5"
-                stroke-linecap="round" fill="none" opacity="0.5"/>
-
-          <!-- ── SILVER CRESCENT C 2 (right moon, slightly offset) ── -->
-          <path d="M74 4 Q62 10 62 21 Q62 32 74 38"
-                stroke="url(#gC2)" stroke-width="3.5"
-                stroke-linecap="round" fill="none"/>
-          <path d="M74 10 Q68 15 68 21 Q68 27 74 32"
-                stroke="url(#gC2)" stroke-width="1.5"
-                stroke-linecap="round" fill="none" opacity="0.5"/>
-
-          <!-- ── GOLD HAND LIFTING FROM BELOW ── -->
-          <!-- Fingers (5 gentle peaks lifting upward) -->
-          <path d="M36 49 Q38 44 41 47 Q43 42 46 46 Q48 41 51 45 Q54 41 57 45 Q60 43 62 47 Q65 44 67 49"
-                stroke="url(#gHand)" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- Palm arc beneath fingers -->
-          <path d="M36 49 Q51 53 67 49"
-                stroke="url(#gHand)" stroke-width="2"
-                stroke-linecap="round" fill="none"/>
-          <!-- Wrist lines -->
-          <line x1="40" y1="52" x2="40" y2="49" stroke="url(#gHand)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="63" y1="52" x2="63" y2="49" stroke="url(#gHand)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <img src="logo.png" alt="Marin Care Connections Logo" style="width:48px;height:48px;object-fit:contain;">
 
         <div class="nav-brand-stack">
           <span class="nav-brand-name">Marin Care Connections</span>
@@ -834,10 +775,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
             <img src="hero.jpg" alt="Caregiver warmly assisting senior at home in Marin County">
   -->
   <div class="hero-right">
-    <div class="ph-box">
-      <div class="ph-icon">📸</div>
-      <div class="ph-txt">HERO PHOTO HERE<br>Free download:<br>pexels.com/photo/7551685</div>
-    </div>
+    <img src="hero.jpg" alt="Caregiver warmly assisting senior at home in Marin County">
   </div>
 
   <div class="hero-scroll">Scroll</div>
@@ -928,14 +866,10 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ PHOTO STRIP ══ -->
 <div id="strips">
   <div class="strip-row">
-    <!--SWAP PHOTO PANEL 1: pexels.com/photo/3768131 → panel1.jpg → replace <div class="strip-ph s1">...</div> with: <img src="panel1.jpg" alt="Companion care">-->
-    <div class="strip-cell"><div class="strip-ph s1"><div class="strip-ph-icon">🤝</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Companion Care</div><div class="strip-caption">Presence that matters</div></div></div>
-    <!--SWAP PHOTO PANEL 2: pexels.com/photo/4386467 → panel2.jpg → replace <div class="strip-ph s2">...</div> with: <img src="panel2.jpg" alt="Personal care">-->
-    <div class="strip-cell"><div class="strip-ph s2"><div class="strip-ph-icon">🧡</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Personal Care</div><div class="strip-caption">Dignity in every gesture</div></div></div>
-    <!--SWAP PHOTO PANEL 3: pexels.com/photo/7551673 → panel3.jpg → replace <div class="strip-ph s3">...</div> with: <img src="panel3.jpg" alt="Memory care">-->
-    <div class="strip-cell"><div class="strip-ph s3"><div class="strip-ph-icon">🧠</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
-    <!--SWAP PHOTO PANEL 4: pexels.com/photo/6647037 → panel4.jpg → replace <div class="strip-ph s4">...</div> with: <img src="panel4.jpg" alt="Live-in care">-->
-    <div class="strip-cell"><div class="strip-ph s4"><div class="strip-ph-icon">🌙</div></div><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Live-In Care</div><div class="strip-caption">There when the night is long</div></div></div>
+    <div class="strip-cell"><img src="panel1.jpg" alt="Companion care"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Companion Care</div><div class="strip-caption">Presence that matters</div></div></div>
+    <div class="strip-cell"><img src="panel2.jpg" alt="Personal care"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Personal Care</div><div class="strip-caption">Dignity in every gesture</div></div></div>
+    <div class="strip-cell"><img src="panel3.jpg" alt="Memory care"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
+    <div class="strip-cell"><img src="panel4.jpg" alt="Live-in care"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Live-In Care</div><div class="strip-caption">There when the night is long</div></div></div>
   </div>
 </div>
 
@@ -946,29 +880,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
       <div class="founder-frame fade-in">
         <div class="founder-box">
           <!-- Large MCC mark — same logo concept scaled up -->
-          <svg width="180" height="120" viewBox="0 0 80 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="fgM" x1="0" y1="0" x2="0" y2="38" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#F5E09A"/><stop offset="50%" stop-color="#D4A520"/><stop offset="100%" stop-color="#B8860B"/>
-              </linearGradient>
-              <linearGradient id="fgH" x1="0" y1="40" x2="80" y2="52" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#C8960C"/><stop offset="50%" stop-color="#E8C060"/><stop offset="100%" stop-color="#C8960C"/>
-              </linearGradient>
-              <linearGradient id="fgC1" x1="42" y1="2" x2="58" y2="38" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#E8EFF5"/><stop offset="50%" stop-color="#C8D8E8"/><stop offset="100%" stop-color="#A0B8CC"/>
-              </linearGradient>
-              <linearGradient id="fgC2" x1="60" y1="2" x2="78" y2="38" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#E8EFF5"/><stop offset="50%" stop-color="#C8D8E8"/><stop offset="100%" stop-color="#A0B8CC"/>
-              </linearGradient>
-            </defs>
-            <path d="M2 36 L2 6 L14 20 L20 6 L26 20 L38 6 L38 36" stroke="url(#fgM)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M56 4 Q44 10 44 21 Q44 32 56 38" stroke="url(#fgC1)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-            <path d="M56 10 Q50 15 50 21 Q50 27 56 32" stroke="url(#fgC1)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
-            <path d="M74 4 Q62 10 62 21 Q62 32 74 38" stroke="url(#fgC2)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-            <path d="M74 10 Q68 15 68 21 Q68 27 74 32" stroke="url(#fgC2)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5"/>
-            <path d="M36 49 Q38 44 41 47 Q43 42 46 46 Q48 41 51 45 Q54 41 57 45 Q60 43 62 47 Q65 44 67 49" stroke="url(#fgH)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M36 49 Q51 53 67 49" stroke="url(#fgH)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          </svg>
+          <img src="logo.png" alt="Marin Care Connections Logo" style="width:200px;height:200px;object-fit:contain;">
         </div>
       </div>
       <div class="founder-text fade-in">
@@ -1209,12 +1121,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <div class="footer-cols">
       <div class="f-brand">
         <div class="f-brand-row">
-          <svg width="32" height="22" viewBox="0 0 80 52" fill="none">
-            <path d="M2 36 L2 6 L14 20 L20 6 L26 20 L38 6 L38 36" stroke="#D4A520" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M56 4 Q44 10 44 21 Q44 32 56 38" stroke="#C8D8E8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-            <path d="M74 4 Q62 10 62 21 Q62 32 74 38" stroke="#C8D8E8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-            <path d="M36 49 Q51 53 67 49" stroke="#D4A520" stroke-width="2" stroke-linecap="round" fill="none"/>
-          </svg>
+          <img src="logo.png" alt="MCC Logo" style="width:36px;height:36px;object-fit:contain;">
           <span class="f-brand-name">Marin Care Connections</span>
         </div>
         <span class="f-brand-sub">Domestic Referral Agency · Novato, CA · Est. 2026</span>
