@@ -675,6 +675,34 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 
 
+
+/* ── HERO TEXT RESTORE ── */
+.hero-agency { color:#D4A520 !important; }
+.hero-tagline { color:#fff !important; font-style:italic !important; }
+.hero-sub { color:rgba(255,255,255,0.88) !important; }
+
+/* ── HERO TEXT SPACING - match image exactly ── */
+.hero-agency {
+  font-size: clamp(3rem, 9vw, 6rem) !important;
+  line-height: 1.05 !important;
+  margin-bottom: 1.2rem !important;
+  color: #D4A520 !important;
+}
+.hero-tagline {
+  font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 2.8rem !important;
+  line-height: 1.3 !important;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+  line-height: 1.9 !important;
+  color: rgba(255,255,255,0.88) !important;
+  margin-bottom: 2.5rem !important;
+}
 </style>
 </head>
 <body>
@@ -705,7 +733,6 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
         <div class="nav-brand-stack">
           <span class="nav-brand-name">Marin Care Connections</span>
-          <span class="nav-brand-sub">Domestic Referral Agency · Marin County, CA</span>
         </div>
       </a>
 
@@ -728,11 +755,15 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 <!-- ══ HERO ══ -->
 <section id="hero" style="display:block;position:relative;">
-  <!-- PHOTO: full width banner, bright, no text -->
-  <div style="width:100%;height:55vw;max-height:580px;min-height:260px;overflow:hidden;">
+  <!-- PHOTO: full width banner, bright, crimson tagline at bottom -->
+  <div style="width:100%;height:55vw;max-height:580px;min-height:260px;overflow:hidden;position:relative;">
     <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" 
          style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:brightness(0.9);" 
          alt="Caregiver with senior">
+    <!-- Crimson tagline runs across bottom of photo, readable, not over faces -->
+    <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(10,10,10,0.55);padding:0.6rem 1.5rem;">
+      <span style="font-family:'Playfair Display',serif;font-size:clamp(0.75rem,2vw,1rem);font-weight:700;color:#C41E3A;letter-spacing:0.18em;text-transform:uppercase;">Domestic Referral Agency &nbsp;·&nbsp; Marin County, CA &nbsp;·&nbsp; Licensed &amp; Compliant</span>
+    </div>
   </div>
   <!-- TEXT: sits on solid navy below photo, no overlap ever -->
   <div style="background:#04101E;padding:4rem 2rem 5rem;width:100%;box-sizing:border-box;">
