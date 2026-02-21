@@ -150,25 +150,14 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 /* ════════════════════════════════════════════════
    HERO — TIGHTENED, NO GAPING SPACE
 ════════════════════════════════════════════════ */
-#hero {
-  position:relative;
-  min-height:100vh;
-  display:block;
-  overflow:hidden;
-}
-#hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to right, rgba(4,16,30,0.85) 0%, rgba(4,16,30,0.6) 50%, rgba(4,16,30,0.3) 100%);
-  z-index:1;
-}
+#hero { display:block; position:relative; }
+
 .hero-bg { position:absolute; inset:0; background:linear-gradient(128deg,#04101E 0%,#0C2040 52%,#071422 100%); }
 .hero-grain { position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px; }
 .hero-gold-bar { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 25%,var(--gold-glow) 60%,transparent); z-index:4; }
 
 /* LEFT — content column fills all vertical space */
-.hero-left { position:relative; z-index:10; max-width:700px; padding-top:8rem;
+.hero-left { background:var(--ink); position:relative; z-index:3; max-width:900px;
   position:relative;
   z-index:3;
   display:flex;
@@ -179,41 +168,12 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 
 /* ★ AGENCY NAME — MASSIVE GOLD ★ */
-.hero-agency { text-shadow:0 2px 20px rgba(0,0,0,0.9);
-  font-family:'Playfair Display',serif;
-  font-size:clamp(3.5rem,8vw,9rem);
-  font-weight:900;
-  line-height:0.92;
-  letter-spacing:-0.025em;
-  background:linear-gradient(135deg,#B8860B 0%,#D4A520 20%,#F5E09A 48%,#E8C060 65%,#C8960C 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  filter:drop-shadow(0 0 50px rgba(184,134,11,0.3));
-  margin-bottom:0.25em;
-}
+
 
 /* ★ CARE THAT COMES TO YOU — italic, large ★ */
-.hero-tagline { text-shadow:0 2px 12px rgba(0,0,0,0.9);
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.5rem,3.2vw,3rem);
-  font-weight:400;
-  font-style:italic;
-  color:rgba(255,255,255,0.88);
-  line-height:1.15;
-  margin-bottom:1.8rem;
-  padding-left:1.4rem;
-  border-left:4px solid var(--gold);
-}
 
-.hero-sub { text-shadow:0 1px 8px rgba(0,0,0,0.8);
-  font-size:1.15rem;
-  font-weight:300;
-  color:rgba(255,255,255,0.62);
-  max-width:520px;
-  line-height:1.9;
-  margin-bottom:2.5rem;
-}
+
+
 .hero-ctas { display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-bottom:3rem; }
 
 /* Trust bar inside left col */
@@ -634,7 +594,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 @media(max-width:1100px) {
   #hero { grid-template-columns:1fr; display:flex; flex-direction:column; }
   .hero-right { display:none !important; }
-  .hero-left { padding:8rem 2rem 4rem; }
+  .hero-left { padding:3rem 2rem 4rem; }
   .about-grid,.contact-layout,.join-layout,.founder-layout { grid-template-columns:1fr; gap:3.5rem; }
   .how-cols { grid-template-columns:1fr; }
   .how-divider { display:none; }
@@ -652,7 +612,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 @media(max-width:768px) {
   body { font-size:16px; }
-  #hero::before { background:linear-gradient(to bottom, rgba(4,16,30,0.75) 0%, rgba(4,16,30,0.85) 100%) !important; }
+  
   .nav-menu { display:none; }
   .hbg { display:flex; }
   /* Values ALWAYS stays 3-col — use min-width to prevent collapse */
@@ -729,14 +689,12 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 /* ── HERO MOBILE OVERLAY ── */
 @media(max-width:768px){
-  #hero::before {
-    background:rgba(4,16,30,0.72) !important;
-  }
+  
 }
 
-.hero-agency { text-shadow: 0 3px 24px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.9) !important; }
-.hero-tagline { text-shadow: 0 2px 16px rgba(0,0,0,0.95) !important; }
-.hero-sub { text-shadow: 0 1px 10px rgba(0,0,0,0.9) !important; color: rgba(255,255,255,0.95) !important; }
+
+
+
 </style>
 </head>
 <body>
@@ -790,8 +748,13 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 <!-- ══ HERO ══ -->
 <section id="hero">
+  <!-- HERO PHOTO BANNER - full width, bright, no text on it -->
+  <div style="width:100%;height:52vw;max-height:600px;min-height:280px;overflow:hidden;display:block;">
+    <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" 
+         style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" 
+         alt="Caregiver with senior">
+  </div>
   <div class="hero-bg"></div>
-  <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;filter:brightness(0.32);" alt="Caregiver">
   <img src="hero.jpg?v=3240" alt="Caregiver with senior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;filter:brightness(0.55);">
   <div class="hero-grain"></div>
   <div class="hero-gold-bar"></div>
