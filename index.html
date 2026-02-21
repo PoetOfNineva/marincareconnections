@@ -168,7 +168,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 .hero-gold-bar { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 25%,var(--gold-glow) 60%,transparent); z-index:4; }
 
 /* LEFT — content column fills all vertical space */
-.hero-left { position:relative; z-index:3; max-width:700px;
+.hero-left { position:relative; z-index:10; max-width:700px; padding-top:8rem;
   position:relative;
   z-index:3;
   display:flex;
@@ -179,7 +179,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 
 /* ★ AGENCY NAME — MASSIVE GOLD ★ */
-.hero-agency {
+.hero-agency { text-shadow:0 2px 20px rgba(0,0,0,0.9);
   font-family:'Playfair Display',serif;
   font-size:clamp(3.5rem,8vw,9rem);
   font-weight:900;
@@ -194,7 +194,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 
 /* ★ CARE THAT COMES TO YOU — italic, large ★ */
-.hero-tagline {
+.hero-tagline { text-shadow:0 2px 12px rgba(0,0,0,0.9);
   font-family:'Playfair Display',serif;
   font-size:clamp(1.5rem,3.2vw,3rem);
   font-weight:400;
@@ -206,7 +206,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   border-left:4px solid var(--gold);
 }
 
-.hero-sub {
+.hero-sub { text-shadow:0 1px 8px rgba(0,0,0,0.8);
   font-size:1.15rem;
   font-weight:300;
   color:rgba(255,255,255,0.62);
@@ -634,7 +634,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 @media(max-width:1100px) {
   #hero { grid-template-columns:1fr; display:flex; flex-direction:column; }
   .hero-right { display:none !important; }
-  .hero-left { padding:3rem 2rem 4rem; }
+  .hero-left { padding:8rem 2rem 4rem; }
   .about-grid,.contact-layout,.join-layout,.founder-layout { grid-template-columns:1fr; gap:3.5rem; }
   .how-cols { grid-template-columns:1fr; }
   .how-divider { display:none; }
@@ -733,20 +733,24 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     background:rgba(4,16,30,0.72) !important;
   }
 }
+
+.hero-agency { text-shadow: 0 3px 24px rgba(0,0,0,0.95), 0 1px 6px rgba(0,0,0,0.9) !important; }
+.hero-tagline { text-shadow: 0 2px 16px rgba(0,0,0,0.95) !important; }
+.hero-sub { text-shadow: 0 1px 10px rgba(0,0,0,0.9) !important; color: rgba(255,255,255,0.95) !important; }
 </style>
 </head>
 <body>
 
 <!-- ══ MOBILE NAV ══ -->
-<div class="mob-nav">
-  <button class="mob-close" onclick="this.parentElement.classList.remove('on')">✕</button>
-  <a href="javascript:void(0)" onclick="goTo('about')"    onclick="this.closest('.mob-nav').classList.remove('on')">About</a>
-  <a href="javascript:void(0)" onclick="goTo('services')" onclick="this.closest('.mob-nav').classList.remove('on')">Services</a>
-  <a href="javascript:void(0)" onclick="goTo('process')"  onclick="this.closest('.mob-nav').classList.remove('on')">Our Process</a>
-  <a href="javascript:void(0)" onclick="goTo('testi')"    onclick="this.closest('.mob-nav').classList.remove('on')">Reviews</a>
-  <a href="javascript:void(0)" onclick="goTo('faq')"      onclick="this.closest('.mob-nav').classList.remove('on')">FAQ</a>
-  <a href="javascript:void(0)" onclick="goTo('join')"     onclick="this.closest('.mob-nav').classList.remove('on')">For Caregivers</a>
-  <a href="javascript:void(0)" onclick="goTo('contact')"  onclick="this.closest('.mob-nav').classList.remove('on')">Contact</a>
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="document.getElementById('mobNav').classList.remove('on')">✕</button>
+  <a href="javascript:void(0)" onclick="goTo('about');document.getElementById('mobNav').classList.remove('on')">About</a>
+  <a href="javascript:void(0)" onclick="goTo('services');document.getElementById('mobNav').classList.remove('on')">Services</a>
+  <a href="javascript:void(0)" onclick="goTo('process');document.getElementById('mobNav').classList.remove('on')">Our Process</a>
+  <a href="javascript:void(0)" onclick="goTo('testi');document.getElementById('mobNav').classList.remove('on')">Reviews</a>
+  <a href="javascript:void(0)" onclick="goTo('faq');document.getElementById('mobNav').classList.remove('on')">FAQ</a>
+  <a href="javascript:void(0)" onclick="goTo('join');document.getElementById('mobNav').classList.remove('on')">For Caregivers</a>
+  <a href="javascript:void(0)" onclick="goTo('contact');document.getElementById('mobNav').classList.remove('on')">Contact</a>
 </div>
 
 <!-- ══ NAVBAR ══ -->
@@ -777,7 +781,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         <li><a href="javascript:void(0)" onclick="showPortal()" class="nb">Login / Portal</a></li>
         <li><a href="javascript:void(0)" onclick="goTo('contact')" class="nc">Request a Referral</a></li>
       </ul>
-      <button class="hbg" onclick="document.querySelector('.mob-nav').classList.add('on')" aria-label="Menu">
+      <button class="hbg" onclick="document.getElementById('mobNav').classList.add('on')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -787,7 +791,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;filter:brightness(0.5);" alt="Caregiver">
+  <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;filter:brightness(0.32);" alt="Caregiver">
   <img src="hero.jpg?v=3240" alt="Caregiver with senior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;filter:brightness(0.55);">
   <div class="hero-grain"></div>
   <div class="hero-gold-bar"></div>
