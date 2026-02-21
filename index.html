@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 <title>Marin Care Connections | Home Care Referral Agency | Marin County, CA</title>
 <meta name="description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
 <!--
 ╔══════════════════════════════════════════════════════╗
 ║              PHOTO SWAP GUIDE                        ║
@@ -59,13 +60,12 @@ body {
   color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
-  /* GLOBAL BASE — everything inherits from here */
   font-size:18px;
 }
 a { text-decoration:none; color:inherit; }
 img { max-width:100%; display:block; }
 
-/* ── HEADINGS — big and readable ── */
+/* ── HEADINGS ── */
 h1,h2,h3,h4 { font-family:'Playfair Display',serif; color:var(--navy); line-height:1.15; }
 h2 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight:700; }
 h3 { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight:700; }
@@ -124,9 +124,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 #nav.ink { background:rgba(6,13,22,0.97); backdrop-filter:blur(14px); padding:0.75rem 0; box-shadow:0 4px 40px rgba(0,0,0,0.5); }
 .nav-wrap { display:flex; align-items:center; justify-content:space-between; }
 
-/* NAV LOGO */
+/* ── FIX 3: LOGO BIGGER (80px from 64px) ── */
 .nav-logo { display:flex; align-items:center; gap:0.9rem; }
-.nav-logo-svg { width:64px; height:64px; flex-shrink:0; }
+.nav-logo img { width:80px !important; height:80px !important; }
 .nav-brand-stack { display:flex; flex-direction:column; }
 .nav-brand-name { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; color:white; line-height:1; }
 .nav-brand-sub  { font-size:0.6rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-glow); margin-top:2px; }
@@ -148,23 +148,14 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 .mob-close { position:absolute; top:2rem; right:2rem; font-size:1.5rem; color:white; cursor:pointer; background:none; border:none; }
 
 /* ════════════════════════════════════════════════
-   HERO — TIGHTENED, NO GAPING SPACE
+   HERO
 ════════════════════════════════════════════════ */
 #hero { display:block; }
-
 .hero-bg { position:absolute; inset:0; background:linear-gradient(128deg,#04101E 0%,#0C2040 52%,#071422 100%); }
 .hero-grain { position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px; }
 .hero-gold-bar { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 25%,var(--gold-glow) 60%,transparent); z-index:4; }
 
-/* LEFT — content column fills all vertical space */
 .hero-left { position:relative; z-index:2; }
-
-/* ★ AGENCY NAME — MASSIVE GOLD ★ */
-
-
-/* ★ CARE THAT COMES TO YOU — italic, large ★ */
-
-
 
 .hero-ctas { display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-bottom:3rem; }
 
@@ -176,13 +167,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 .trust-num   { font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:700; color:var(--gold-glow); line-height:1; }
 .trust-label { font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.38); line-height:1.5; }
 
-/* Hero photo - full bleed background on desktop */
 .hero-right { display:none !important; }
-
-
 .hero-right img { width:100%; height:100%; object-fit:cover; object-position:center 20%; filter:sepia(10%) brightness(0.82) saturate(0.88); }
 
-/* Photo placeholder */
 .ph-box {
   width:100%; height:100%; min-height:100vh;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -201,6 +188,69 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 @keyframes bob { 0%,100%{transform:translateY(0);opacity:.2} 50%{transform:translateY(6px);opacity:.4} }
 .hero-scroll::after { content:''; width:1px; height:32px; background:linear-gradient(to bottom,rgba(184,134,11,0.5),transparent); }
+
+/* ════════════════════════════════════════════════
+   FIX 1: HERO AGENCY NAME — BIGGER, CAPS, GOLD
+   FIX 4: HERO PARAGRAPH — CENTERED/BALANCED
+════════════════════════════════════════════════ */
+.hero-agency {
+  font-family: 'Cinzel', 'Playfair Display', serif !important;
+  font-size: clamp(2.8rem, 8vw, 5.5rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  margin-bottom: 1.2rem !important;
+  color: #E8C060 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  text-shadow: 0 2px 24px rgba(232,192,96,0.28), 0 0 60px rgba(184,134,11,0.15) !important;
+}
+
+.hero-tagline {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 2.8rem !important;
+  line-height: 1.3 !important;
+}
+
+/* FIX 4: Paragraph balanced east/west */
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+  line-height: 1.9 !important;
+  color: rgba(255,255,255,0.88) !important;
+  margin-bottom: 2.5rem !important;
+  max-width: 680px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* ════════════════════════════════════════════════
+   FIX 2: HERO PHOTO TAGLINE BAR — BIGGER, BOLDER, GOLDEN
+════════════════════════════════════════════════ */
+.hero-photo-tagline-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(6,13,22,0.82);
+  padding: 0.85rem 2rem;
+  border-top: 2px solid rgba(232,192,96,0.45);
+}
+.hero-photo-tagline-text {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: clamp(0.88rem, 2.2vw, 1.2rem);
+  font-weight: 700;
+  color: #E8C060;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
 
 /* ════════════════════════════════════════════════
    QUICK-NAV BAR
@@ -249,7 +299,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 #values { background:var(--warm); border-bottom:1px solid var(--stone); padding:0; }
 .values-row {
   display:grid;
-  grid-template-columns:repeat(3,1fr);  /* LOCKED — never stacks */
+  grid-template-columns:repeat(3,1fr);
   border:1px solid var(--stone);
 }
 .v-block {
@@ -533,7 +583,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 .res-card:hover .res-link { color:var(--gold); border-color:var(--gold); }
 
 /* ════════════════════════════════════════════════
-   FOOTER — NEAR-BLACK, CRISP WHITE
+   FOOTER
 ════════════════════════════════════════════════ */
 #footer {
   background:var(--ink);
@@ -592,22 +642,22 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 @media(max-width:768px) {
   body { font-size:16px; }
-  
   .nav-menu { display:none; }
   .hbg { display:flex; }
-  /* Values ALWAYS stays 3-col — use min-width to prevent collapse */
   .values-row { grid-template-columns:repeat(3,1fr) !important; }
   .v-block { padding:2rem 1rem; }
   .v-block p { font-size:0.88rem; }
   .svc-grid,.faq-grid { grid-template-columns:1fr; }
   .f-row { grid-template-columns:1fr; }
   .about-tiles { grid-template-columns:1fr; }
-  .hero-ctas { flex-direction:column; align-items:flex-start; }
+  .hero-ctas { flex-direction:column; align-items:center; }
   .footer-cols { grid-template-columns:1fr; }
   .footer-bot { flex-direction:column; }
   .strip-row { grid-template-columns:1fr; }
   .strip-cell { height:300px !important; }
   .qn-item { min-width:100px; padding:1rem 0.8rem; }
+  .hero-sub { text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  .nav-logo img { width:64px !important; height:64px !important; }
 }
 
 /* ── PHOTO BREAK RESPONSIVE ── */
@@ -667,42 +717,6 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     font-size:1.35rem;
   }
 }
-/* ── HERO MOBILE OVERLAY ── */
-@media(max-width:768px){
-  
-}
-
-
-
-
-
-/* ── HERO TEXT RESTORE ── */
-.hero-agency { color:#D4A520 !important; }
-.hero-tagline { color:#fff !important; font-style:italic !important; }
-.hero-sub { color:rgba(255,255,255,0.88) !important; }
-
-/* ── HERO TEXT SPACING - match image exactly ── */
-.hero-agency {
-  font-size: clamp(3rem, 9vw, 6rem) !important;
-  line-height: 1.05 !important;
-  margin-bottom: 1.2rem !important;
-  color: #D4A520 !important;
-}
-.hero-tagline {
-  font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-  color: #fff !important;
-  margin-top: 0.4rem !important;
-  margin-bottom: 2.8rem !important;
-  line-height: 1.3 !important;
-}
-.hero-sub {
-  font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
-  line-height: 1.9 !important;
-  color: rgba(255,255,255,0.88) !important;
-  margin-bottom: 2.5rem !important;
-}
 </style>
 </head>
 <body>
@@ -723,14 +737,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <nav id="nav">
   <div class="container">
     <div class="nav-wrap">
-
-      <!-- ════════════════════════════════════════════
-           MCC LOGO: Gold M + Two Silver Crescent C's
-                     + Gold Hand Lifting from Below
-      ════════════════════════════════════════════ -->
       <a href="javascript:void(0)" onclick="goTo('hero')" class="nav-logo">
-        <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png" alt="Marin Care Connections Logo" style="width:64px;height:64px;object-fit:contain;">
-
+        <!-- FIX 3: Logo bigger — 80px -->
+        <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png" alt="Marin Care Connections Logo" style="width:80px;height:80px;object-fit:contain;">
         <div class="nav-brand-stack">
           <span class="nav-brand-name">Marin Care Connections</span>
         </div>
@@ -755,26 +764,29 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 <!-- ══ HERO ══ -->
 <section id="hero" style="display:block;position:relative;">
-  <!-- PHOTO: full width banner, bright, crimson tagline at bottom -->
+  <!-- PHOTO: full width banner -->
   <div style="width:100%;height:55vw;max-height:580px;min-height:260px;overflow:hidden;position:relative;">
     <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" 
          style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:brightness(0.9);" 
          alt="Caregiver with senior">
-    <!-- Crimson tagline runs across bottom of photo, readable, not over faces -->
-    <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(10,10,10,0.55);padding:0.6rem 1.5rem;">
-      <span style="font-family:'Playfair Display',serif;font-size:clamp(0.75rem,2vw,1rem);font-weight:700;color:#C41E3A;letter-spacing:0.18em;text-transform:uppercase;">Domestic Referral Agency &nbsp;·&nbsp; Marin County, CA &nbsp;·&nbsp; Licensed &amp; Compliant</span>
+    <!-- FIX 2: Tagline bar — golden, Cinzel font, bigger, bold, crystal clear -->
+    <div class="hero-photo-tagline-bar">
+      <span class="hero-photo-tagline-text">
+        Domestic Referral Agency &nbsp;·&nbsp; Marin County, CA &nbsp;·&nbsp; Licensed &amp; Compliant
+      </span>
     </div>
   </div>
-  <!-- TEXT: sits on solid navy below photo, no overlap ever -->
-  <div style="background:#04101E;padding:4rem 2rem 5rem;width:100%;box-sizing:border-box;">
 
+  <!-- TEXT: sits on solid navy below photo -->
+  <div style="background:#04101E;padding:4rem 2rem 5rem;width:100%;box-sizing:border-box;text-align:center;">
 
-    <!-- AGENCY NAME — MASSIVE GOLD -->
-    <h1 class="hero-agency">Marin Care<br>Connections</h1>
+    <!-- FIX 1: AGENCY NAME — MASSIVE, ALL CAPS, GOLD, CINZEL FONT -->
+    <h1 class="hero-agency">MARIN CARE<br>CONNECTIONS</h1>
 
-    <!-- CARE THAT COMES TO YOU -->
+    <!-- Care That Comes to You -->
     <div class="hero-tagline">Care That Comes to You.</div>
 
+    <!-- FIX 4: Paragraph — centered, balanced east and west -->
     <p class="hero-sub">
       Marin County families deserve more than a placement agency.
       They deserve a partner who vets every caregiver with relentless precision,
@@ -809,19 +821,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     </div>
   </div>
 
-  <!-- RIGHT — PHOTO PANEL -->
-  <!--
-    SWAP PHOTO — HERO
-    Step 1: Download from pexels.com/photo/7551685 → click Free Download
-    Step 2: Save file as: hero.jpg
-    Step 3: Put hero.jpg in same folder as this HTML file
-    Step 4: In Notepad, DELETE the <div class="ph-box">...</div> block below
-            REPLACE with this line:
-            <img src="hero.jpg" alt="Caregiver warmly assisting senior at home in Marin County">
-  -->
-  <div class="hero-right" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg) center/cover no-repeat; min-height:520px; border-radius:12px;">
-  
-  </div>
+  <div class="hero-right" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg) center/cover no-repeat; min-height:520px; border-radius:12px;"></div>
   <div class="hero-scroll">Scroll</div>
 </section>
 
@@ -923,7 +923,6 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <div class="founder-layout">
       <div class="founder-frame fade-in">
         <div class="founder-box">
-          <!-- Large MCC mark — same logo concept scaled up -->
           <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png" alt="Marin Care Connections Logo" style="width:200px;height:200px;object-fit:contain;">
         </div>
       </div>
@@ -954,19 +953,17 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
       <p style="color:var(--muted);max-width:540px;margin:1rem auto 0">All services are non-medical, performed by independent, pre-verified caregivers from our registry.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card fade-in"><div class="svc-icon">🤝</div><h3>Companion Care</h3><p>Genuine presence and social engagement for seniors living alone or recovering at home.</p><ul class="svc-list"><li>Meaningful conversation & engagement</li><li>Appointment accompaniment</li><li>Hobbies, reading & cognitive activities</li><li>Supervised social outings</li></ul></div>
-      <div class="svc-card fade-in"><div class="svc-icon">🧡</div><h3>Personal Care</h3><p>Respectful, professional assistance with daily living — preserving independence with grace.</p><ul class="svc-list"><li>Bathing & personal hygiene</li><li>Dressing & grooming assistance</li><li>Mobility support & safe transfers</li><li>Medication reminders (non-medical)</li></ul></div>
-      <div class="svc-card fade-in"><div class="svc-icon">🍽️</div><h3>Household Support</h3><p>Light household management so family members can focus on presence, not logistics.</p><ul class="svc-list"><li>Nutritious meal preparation</li><li>Light housekeeping & laundry</li><li>Grocery runs & errand support</li><li>Transportation to appointments</li></ul></div>
-      <div class="svc-card fade-in"><div class="svc-icon">🌙</div><h3>Live-In & 24-Hour Care</h3><p>Continuous, reliable presence for families who need round-the-clock assurance.</p><ul class="svc-list"><li>24-hour awake or live-in shifts</li><li>Overnight monitoring & support</li><li>Emergency response presence</li><li>Family caregiver respite relief</li></ul></div>
-      <div class="svc-card fade-in"><div class="svc-icon">🧠</div><h3>Memory & Specialized Care</h3><p>Caregivers with deep, specialized experience in progressive and neurological conditions.</p><ul class="svc-list"><li>Alzheimer's & Dementia care</li><li>Parkinson's & neurological support</li><li>Hospice & palliative companion care</li><li>Long-term progressive conditions</li></ul></div>
-      <div class="svc-card fade-in"><div class="svc-icon">⚡</div><h3>Urgent & Discharge Placements</h3><p>When a hospital calls and a family needs care in hours, not days — we move fast.</p><ul class="svc-list"><li>Same-day hospital discharge care</li><li>Short-notice shift coverage</li><li>Post-surgical recovery support</li><li>Respite & trial placements</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🤝</div><h3>Companion Care</h3><p>Genuine presence and social engagement for seniors living alone or recovering at home.</p><ul class="svc-list"><li>Meaningful conversation &amp; engagement</li><li>Appointment accompaniment</li><li>Hobbies, reading &amp; cognitive activities</li><li>Supervised social outings</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🧡</div><h3>Personal Care</h3><p>Respectful, professional assistance with daily living — preserving independence with grace.</p><ul class="svc-list"><li>Bathing &amp; personal hygiene</li><li>Dressing &amp; grooming assistance</li><li>Mobility support &amp; safe transfers</li><li>Medication reminders (non-medical)</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🍽️</div><h3>Household Support</h3><p>Light household management so family members can focus on presence, not logistics.</p><ul class="svc-list"><li>Nutritious meal preparation</li><li>Light housekeeping &amp; laundry</li><li>Grocery runs &amp; errand support</li><li>Transportation to appointments</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🌙</div><h3>Live-In &amp; 24-Hour Care</h3><p>Continuous, reliable presence for families who need round-the-clock assurance.</p><ul class="svc-list"><li>24-hour awake or live-in shifts</li><li>Overnight monitoring &amp; support</li><li>Emergency response presence</li><li>Family caregiver respite relief</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🧠</div><h3>Memory &amp; Specialized Care</h3><p>Caregivers with deep, specialized experience in progressive and neurological conditions.</p><ul class="svc-list"><li>Alzheimer's &amp; Dementia care</li><li>Parkinson's &amp; neurological support</li><li>Hospice &amp; palliative companion care</li><li>Long-term progressive conditions</li></ul></div>
+      <div class="svc-card fade-in"><div class="svc-icon">⚡</div><h3>Urgent &amp; Discharge Placements</h3><p>When a hospital calls and a family needs care in hours, not days — we move fast.</p><ul class="svc-list"><li>Same-day hospital discharge care</li><li>Short-notice shift coverage</li><li>Post-surgical recovery support</li><li>Respite &amp; trial placements</li></ul></div>
     </div>
   </div>
 </section>
 
 <!-- ══ PROCESS ══ -->
-
-
 <section id="process" class="section">
   <div class="container">
     <div class="process-head fade-in">
@@ -977,16 +974,16 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     </div>
     <div class="process-grid">
       <div class="p-step fade-in"><div class="p-num">01</div><h4>HCA Registry</h4><p>Active California HCA registration confirmed live through CDSS before any placement.</p></div>
-      <div class="p-step fade-in"><div class="p-num">02</div><h4>Background Check</h4><p>DOJ & FBI Live Scan fingerprint clearance. Every applicant. No conditional approvals.</p></div>
+      <div class="p-step fade-in"><div class="p-num">02</div><h4>Background Check</h4><p>DOJ &amp; FBI Live Scan fingerprint clearance. Every applicant. No conditional approvals.</p></div>
       <div class="p-step fade-in"><div class="p-num">03</div><h4>TB Testing</h4><p>Negative TB results, dated within 24 months, reviewed and archived before first shift.</p></div>
       <div class="p-step fade-in"><div class="p-num">04</div><h4>Insurance Verified</h4><p>Personal liability confirmed — minimum $1M per occurrence, $6M aggregate.</p></div>
-      <div class="p-step fade-in"><div class="p-num">05</div><h4>ID & Authorization</h4><p>Government-issued photo ID and legal U.S. work authorization reviewed and filed.</p></div>
+      <div class="p-step fade-in"><div class="p-num">05</div><h4>ID &amp; Authorization</h4><p>Government-issued photo ID and legal U.S. work authorization reviewed and filed.</p></div>
       <div class="p-step fade-in"><div class="p-num">06</div><h4>References Checked</h4><p>Two professional references contacted, verified, and documented before approval.</p></div>
       <div class="p-step fade-in"><div class="p-num">07</div><h4>Agreements Signed</h4><p>Full Referral Agreement and Mutual Arbitration Agreement executed prior to placement.</p></div>
       <div class="p-step fade-in"><div class="p-num">08</div><h4>Rate Confirmed</h4><p>Caregiver rate presented and accepted before every single shift. No surprises. Ever.</p></div>
     </div>
     <div class="process-badges fade-in">
-      <div class="p-badge"><span class="p-badge-icon">🛡️</span><div><strong>CA HCA Registry</strong><span>State-registered & live-verified</span></div></div>
+      <div class="p-badge"><span class="p-badge-icon">🛡️</span><div><strong>CA HCA Registry</strong><span>State-registered &amp; live-verified</span></div></div>
       <div class="p-badge"><span class="p-badge-icon">🔍</span><div><strong>DOJ / FBI Cleared</strong><span>Live Scan fingerprint check</span></div></div>
       <div class="p-badge"><span class="p-badge-icon">📋</span><div><strong>Fully Insured</strong><span>$1M–$6M personal liability</span></div></div>
       <div class="p-badge"><span class="p-badge-icon">⚖️</span><div><strong>CA Law Compliant</strong><span>Civil Code § 1812.5095</span></div></div>
@@ -1061,7 +1058,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ FAQ ══ -->
 <section id="faq" class="section" style="background:var(--warm)">
   <div class="container">
-    <div class="faq-head fade-in"><span class="eyebrow">Questions & Answers</span><div class="rule c"></div><h2>What Families Ask</h2></div>
+    <div class="faq-head fade-in"><span class="eyebrow">Questions &amp; Answers</span><div class="rule c"></div><h2>What Families Ask</h2></div>
     <div class="faq-grid">
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What exactly is a Domestic Referral Agency? <span class="faq-plus">+</span></div><div class="faq-a">A Domestic Referral Agency is a licensed matchmaker — we identify, verify, and connect independent caregivers with families seeking home care. We are not the employer of any caregiver we refer. This model, governed by California Civil Code § 1812.5095, gives families direct access to qualified professionals while caregivers retain full independence.</div></div>
       <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Who handles the pricing? <span class="faq-plus">+</span></div><div class="faq-a">We do. Agency negotiates the service fee directly with you and presents a complete, transparent quote before any caregiver is confirmed. Our referral fee — never more than 35% of the total — is already included. You will always know exactly what you are paying before care begins. You never negotiate with the caregiver directly.</div></div>
@@ -1075,8 +1072,6 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
-
 <!-- PHOTO BREAK 2 -->
 <div class="photo-break reverse-mobile">
   <div class="photo-break-text">
@@ -1087,7 +1082,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <div class="photo-break-img" style="background-image:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel1.jpg);background-position:center 40%;"></div>
 </div>
 
-
+<!-- ══ CONTACT ══ -->
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-layout">
@@ -1126,7 +1121,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
             <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label>HCA Registry ID</label><input type="text" name="hca_id" placeholder="If active"></div></div>
             <div class="f-row"><div class="f-grp"><label>Years of Experience</label><select name="experience"><option>Under 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select></div><div class="f-grp"><label>Availability</label><select name="availability"><option>Full-time</option><option>Part-time</option><option>Live-in shifts</option><option>Overnight only</option><option>Flexible</option></select></div></div>
             <div class="f-row full"><div class="f-grp"><label>Personal Liability Insurance ($1M/$6M)?</label><select name="insurance"><option>Yes — currently insured</option><option>No — need to obtain it</option><option>Not sure</option></select></div></div>
-            <div class="f-row full"><div class="f-grp"><label>Specialties, Certifications & Notes</label><textarea name="message" placeholder="Certifications, languages spoken, care specialties, anything relevant..."></textarea></div></div>
+            <div class="f-row full"><div class="f-grp"><label>Specialties, Certifications &amp; Notes</label><textarea name="message" placeholder="Certifications, languages spoken, care specialties, anything relevant..."></textarea></div></div>
             <button type="submit" class="f-submit">Submit Registry Application</button>
             <p class="f-note">Submitting confirms you understand you are applying as an independent contractor, not an employee of Marin Care Connections LLC. Full document verification required before approval.</p>
           </form>
@@ -1171,7 +1166,6 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   </div>
 </section>
 
-<!-- ══ RESOURCES ══ -->
 <!-- PHOTO BREAK 3 -->
 <div class="photo-break reverse-mobile">
   <div class="photo-break-text">
@@ -1182,7 +1176,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <div class="photo-break-img" style="background-image:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel4.jpg);background-position:center;"></div>
 </div>
 
-
+<!-- ══ RESOURCES ══ -->
 <section id="resources">
   <div class="container">
     <div class="res-head fade-in"><span class="eyebrow">Senior Care Guidance</span><div class="rule c"></div><h2>Resources for Families</h2></div>
@@ -1194,7 +1188,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   </div>
 </section>
 
-<!-- ══ FOOTER — NEAR-BLACK, FULLY READABLE ══ -->
+<!-- ══ FOOTER ══ -->
 <footer id="footer">
   <div class="container">
     <div class="footer-cols">
@@ -1222,8 +1216,8 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         <ul class="f-links">
           <li><a href="javascript:void(0)" onclick="goTo('services')">Companion Care</a></li>
           <li><a href="javascript:void(0)" onclick="goTo('services')">Personal Care</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Live-In & 24-Hour</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Memory & Dementia</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Live-In &amp; 24-Hour</a></li>
+          <li><a href="javascript:void(0)" onclick="goTo('services')">Memory &amp; Dementia</a></li>
           <li><a href="javascript:void(0)" onclick="goTo('services')">Respite Care</a></li>
           <li><a href="javascript:void(0)" onclick="goTo('services')">Urgent Placements</a></li>
         </ul>
@@ -1298,7 +1292,6 @@ function showPortal(){
   m.style.display='flex';
 }
 
-// Close modal clicking outside
 document.getElementById('portal-modal').addEventListener('click',function(e){
   if(e.target===this) this.style.display='none';
 });
