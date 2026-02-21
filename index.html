@@ -126,7 +126,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 /* NAV LOGO */
 .nav-logo { display:flex; align-items:center; gap:0.9rem; }
-.nav-logo-svg { width:48px; height:48px; flex-shrink:0; }
+.nav-logo-svg { width:64px; height:64px; flex-shrink:0; }
 .nav-brand-stack { display:flex; flex-direction:column; }
 .nav-brand-name { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:900; color:white; line-height:1; }
 .nav-brand-sub  { font-size:0.6rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-glow); margin-top:2px; }
@@ -156,13 +156,22 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   display:grid;
   grid-template-columns:1fr 44%;
   overflow:hidden;
+  background: url(hero.jpg?v=3240) center/cover no-repeat;
+  position:relative;
+}
+#hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, rgba(4,16,30,0.85) 0%, rgba(4,16,30,0.6) 50%, rgba(4,16,30,0.3) 100%);
+  z-index:1;
 }
 .hero-bg { position:absolute; inset:0; background:linear-gradient(128deg,#04101E 0%,#0C2040 52%,#071422 100%); }
 .hero-grain { position:absolute; inset:0; opacity:0.03; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:200px; }
 .hero-gold-bar { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold) 25%,var(--gold-glow) 60%,transparent); z-index:4; }
 
 /* LEFT — content column fills all vertical space */
-.hero-left {
+.hero-left { position:relative; z-index:3;
   position:relative;
   z-index:3;
   display:flex;
@@ -218,15 +227,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 .trust-num   { font-family:'Playfair Display',serif; font-size:1.9rem; font-weight:700; color:var(--gold-glow); line-height:1; }
 .trust-label { font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.38); line-height:1.5; }
 
-/* RIGHT — photo panel fills full height */
+/* Hero photo - full bleed background on desktop */
 .hero-right {
-  overflow:hidden;
-  position:relative;
-  z-index:2;
-  min-height:580px;
-  background-size:cover !important;
-  background-position:center !important;
-  background-repeat:no-repeat !important;
+  display:none !important;
 }
 .hero-right::before {
   content:'';
@@ -633,16 +636,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 ════════════════════════════════════════════════ */
 @media(max-width:1100px) {
   #hero { grid-template-columns:1fr; display:flex; flex-direction:column; }
-  .hero-right { 
-    display:block !important; 
-    width:100%; 
-    height:320px !important; 
-    min-height:320px !important;
-    order:-1;
-    border-radius:0;
-    background-size:cover !important;
-    background-position:center top !important;
-  }
+  .hero-right { display:none !important; }
   .hero-left { padding:3rem 2rem 4rem; }
   .about-grid,.contact-layout,.join-layout,.founder-layout { grid-template-columns:1fr; gap:3.5rem; }
   .how-cols { grid-template-columns:1fr; }
@@ -661,6 +655,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 @media(max-width:768px) {
   body { font-size:16px; }
+  #hero::before { background:linear-gradient(to bottom, rgba(4,16,30,0.75) 0%, rgba(4,16,30,0.85) 100%) !important; }
   .nav-menu { display:none; }
   .hbg { display:flex; }
   /* Values ALWAYS stays 3-col — use min-width to prevent collapse */
@@ -703,7 +698,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
                      + Gold Hand Lifting from Below
       ════════════════════════════════════════════ -->
       <a href="javascript:void(0)" onclick="goTo('hero')" class="nav-logo">
-        <img src="logo.png?v=3240" alt="Marin Care Connections Logo" style="width:48px;height:48px;object-fit:contain;">
+        <img src="logo.png?v=3240" alt="Marin Care Connections Logo" style="width:64px;height:64px;object-fit:contain;">
 
         <div class="nav-brand-stack">
           <span class="nav-brand-name">Marin Care Connections</span>
@@ -880,7 +875,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <div class="strip-row">
     <div class="strip-cell" style="background:url(panel1.jpg?v=3240) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Companion Care</div><div class="strip-caption">Presence that matters</div></div></div>
     <div class="strip-cell" style="background:url(panel2.jpg?v=3240) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Personal Care</div><div class="strip-caption">Dignity in every gesture</div></div></div>
-    <div class="strip-cell" style="background:url(panel3.jpg?v=3240) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
+    <div class="strip-cell" style="background:url(panel3.jpg?v=3240) 20% center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
     <div class="strip-cell" style="background:url(panel4.jpg?v=3240) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Live-In Care</div><div class="strip-caption">There when the night is long</div></div></div>
   </div>
 </div>
