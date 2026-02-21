@@ -186,6 +186,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   animation:bob 2.5s infinite;
 }
 @keyframes bob { 0%,100%{transform:translateY(0);opacity:.2} 50%{transform:translateY(6px);opacity:.4} }
+@keyframes arrowPulse { 0%,100%{transform:translateX(0);opacity:0.7} 50%{transform:translateX(4px);opacity:1} }
 .hero-scroll::after { content:''; width:1px; height:32px; background:linear-gradient(to bottom,rgba(184,134,11,0.5),transparent); }
 
 /* ════════════════════════════════════════════════
@@ -759,18 +760,24 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     </div>
   </div>
 
-  <!-- NAV STRIP — always visible, horizontally scrollable on mobile -->
-  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#0C1F36;">
-    <div style="display:flex;align-items:center;min-width:max-content;padding:0 0.5rem;border-bottom:1px solid rgba(184,134,11,0.12);">
-      <a href="javascript:void(0)" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">About</a>
-      <a href="javascript:void(0)" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Services</a>
-      <a href="javascript:void(0)" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Our Process</a>
-      <a href="javascript:void(0)" onclick="goTo('testi')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Reviews</a>
-      <a href="javascript:void(0)" onclick="goTo('faq')"      style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">FAQ</a>
-      <a href="javascript:void(0)" onclick="goTo('join')"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">For Caregivers</a>
-      <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Contact</a>
-      <a href="javascript:void(0)" onclick="showPortal()"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);border:1px solid rgba(232,192,96,0.4);margin:0.4rem 0.6rem;">Login / Portal</a>
-      <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:0.9rem 1.2rem;white-space:nowrap;background:#B8860B;margin:0.4rem 0.6rem 0.4rem 0;">Request a Referral</a>
+  <!-- NAV STRIP — always visible, horizontally scrollable, with right-arrow hint -->
+  <div style="position:relative;">
+    <div id="navStrip" onscroll="checkNavScroll()" style="overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#0C1F36;">
+      <div style="display:flex;align-items:center;min-width:max-content;padding:0 0.5rem;border-bottom:1px solid rgba(184,134,11,0.12);">
+        <a href="javascript:void(0)" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">About</a>
+        <a href="javascript:void(0)" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Services</a>
+        <a href="javascript:void(0)" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Our Process</a>
+        <a href="javascript:void(0)" onclick="goTo('testi')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Reviews</a>
+        <a href="javascript:void(0)" onclick="goTo('faq')"      style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">FAQ</a>
+        <a href="javascript:void(0)" onclick="goTo('join')"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">For Caregivers</a>
+        <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Contact</a>
+        <a href="javascript:void(0)" onclick="showPortal()"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);border:1px solid rgba(232,192,96,0.4);margin:0.4rem 0.6rem;">Login / Portal</a>
+        <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:0.9rem 1.2rem;white-space:nowrap;background:#B8860B;margin:0.4rem 0.6rem 0.4rem 0;">Request a Referral</a>
+      </div>
+    </div>
+    <!-- SCROLL ARROW — fades out once user has scrolled -->
+    <div id="navScrollArrow" style="position:absolute;top:0;right:0;bottom:0;width:48px;background:linear-gradient(to right,transparent,rgba(12,31,54,0.96));display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
+      <span style="color:#E8C060;font-size:1.2rem;animation:arrowPulse 1.2s infinite;">›</span>
     </div>
   </div>
 
@@ -1265,16 +1272,16 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 </div>
 
 <!-- ══ PORTAL MODAL ══ -->
-<div id="portal-modal" style="display:none;position:fixed;inset:0;background:rgba(6,13,22,0.92);z-index:9999;align-items:center;justify-content:center;">
-  <div style="background:var(--navy-mid);border:1px solid var(--gold);padding:3.5rem;max-width:480px;width:90%;position:relative;text-align:center;">
+<div id="portal-modal" style="display:none;position:fixed;inset:0;background:rgba(6,13,22,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:var(--navy-mid);border:1px solid var(--gold);padding:2rem 1.5rem;max-width:440px;width:100%;box-sizing:border-box;position:relative;text-align:center;">
     <button onclick="document.getElementById('portal-modal').style.display='none'" style="position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
     <div style="font-size:3rem;margin-bottom:1rem;">🌙</div>
     <h3 style="color:white;font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;">Client Portal</h3>
     <div style="width:48px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-glow));margin:0 auto 1.5rem;"></div>
     <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.85;margin-bottom:2rem;">Our secure client portal is launching very soon. Families and caregivers will be able to manage schedules, documents, and payments all in one place.</p>
     <p style="color:var(--gold-glow);font-size:0.88rem;margin-bottom:2rem;font-style:italic;">In the meantime, reach us directly:</p>
-    <a href="tel:4153263507" style="display:block;background:var(--gold);color:white;padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;">(415) 326-3507</a>
-    <a href="mailto:Marincareconnections@gmail.com" style="display:block;border:1px solid rgba(184,134,11,0.4);color:var(--gold-glow);padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;word-break:break-all;line-height:1.5;">Marincareconnections@gmail.com</a>
+    <a href="tel:4153263507" style="display:block;background:var(--gold);color:white;padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;box-sizing:border-box;">(415) 326-3507</a>
+    <a href="mailto:Marincareconnections@gmail.com" style="display:block;border:1px solid rgba(184,134,11,0.4);color:var(--gold-glow);padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;box-sizing:border-box;overflow-wrap:break-word;word-break:break-word;">Marincareconnections@gmail.com</a>
   </div>
 </div>
 
@@ -1282,6 +1289,18 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 function goTo(id){
   const el=document.getElementById(id);
   if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+// Nav scroll arrow — hide once user has scrolled right
+function checkNavScroll(){
+  const strip = document.getElementById('navStrip');
+  const arrow = document.getElementById('navScrollArrow');
+  if(!strip || !arrow) return;
+  if(strip.scrollLeft > 30){
+    arrow.style.opacity = '0';
+  } else {
+    arrow.style.opacity = '1';
+  }
 }
 
 // Nav strip is always visible — no resize logic needed
