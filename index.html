@@ -733,58 +733,44 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 </div>
 
 <!-- ══════════════════════════════════════════════
-     SOLID NAVY HEADER BLOCK — everything lives here
-     Logo · Agency Name · Tagline · Nav links
-     ZERO overlap with hero image
+     SOLID NAVY HEADER — Logo · Name · Nav always visible
 ════════════════════════════════════════════════ -->
 <header id="nav" style="background:#0C1F36;border-bottom:3px solid #B8860B;padding:0;position:relative;z-index:999;">
 
-  <!-- TOP ROW: Logo + Agency Name + Tagline -->
-  <div style="border-bottom:1px solid rgba(184,134,11,0.2);padding:1.6rem 2.5rem;">
-    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:1.6rem;">
+  <!-- TOP ROW: Logo + Agency Name + Tagline + Hamburger -->
+  <div style="border-bottom:1px solid rgba(184,134,11,0.25);padding:1.4rem 1.5rem;">
+    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:1.2rem;">
 
       <!-- Logo -->
       <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png"
            alt="MCC Logo"
-           style="width:80px;height:80px;object-fit:contain;flex-shrink:0;">
+           style="width:72px;height:72px;object-fit:contain;flex-shrink:0;">
 
-      <!-- Agency Name + Tagline stacked -->
-      <div style="flex:1;">
-        <div style="font-family:'Cinzel','Georgia',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:900;color:#E8C060;text-transform:uppercase;letter-spacing:0.06em;line-height:1.1;text-shadow:0 2px 16px rgba(232,192,96,0.25);">
+      <!-- Agency Name + Tagline -->
+      <div style="flex:1;min-width:0;">
+        <div style="font-family:'Cinzel','Georgia',serif;font-size:clamp(1.4rem,5vw,3.2rem);font-weight:900;color:#E8C060;text-transform:uppercase;letter-spacing:0.05em;line-height:1.1;text-shadow:0 2px 16px rgba(232,192,96,0.25);">
           MARIN CARE CONNECTIONS
         </div>
-        <div style="font-family:'Cinzel','Georgia',serif;font-size:clamp(0.7rem,1.5vw,0.95rem);font-weight:700;color:#E8C060;letter-spacing:0.28em;text-transform:uppercase;margin-top:0.4rem;opacity:0.85;">
-          DOMESTIC REFERRAL AGENCY &nbsp;·&nbsp; MARIN COUNTY, CA &nbsp;·&nbsp; LICENSED &amp; COMPLIANT
+        <div style="font-family:'DM Sans',sans-serif;font-size:clamp(0.6rem,1.8vw,0.85rem);font-weight:700;color:#E8C060;letter-spacing:0.2em;text-transform:uppercase;margin-top:0.35rem;opacity:0.8;">
+          DOMESTIC REFERRAL AGENCY · MARIN COUNTY, CA · LICENSED &amp; COMPLIANT
         </div>
       </div>
 
-      <!-- Hamburger (mobile only) -->
-      <button id="hamburgerBtn"
-              onclick="document.getElementById('mobNav').classList.add('on')"
-              aria-label="Menu"
-              style="display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px;flex-shrink:0;">
-        <span style="display:block;width:30px;height:3px;background:#E8C060;border-radius:2px;"></span>
-        <span style="display:block;width:30px;height:3px;background:#E8C060;border-radius:2px;"></span>
-        <span style="display:block;width:30px;height:3px;background:#E8C060;border-radius:2px;"></span>
-      </button>
     </div>
   </div>
 
-  <!-- BOTTOM ROW: Nav links -->
-  <div id="mainNavBar" style="padding:0 2.5rem;">
-    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-      <ul id="mainNavMenu" style="display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:0;flex-wrap:wrap;">
-        <li><a href="javascript:void(0)" onclick="goTo('about')"    style="display:block;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:1rem 1.2rem;">About</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('services')" style="display:block;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:1rem 1.2rem;">Services</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('process')"  style="display:block;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:1rem 1.2rem;">Our Process</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('testi')"    style="display:block;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:1rem 1.2rem;">Reviews</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('faq')"      style="display:block;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:1rem 1.2rem;">FAQ</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('join')"     style="display:block;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:1rem 1.2rem;">For Caregivers</a></li>
-      </ul>
-      <div style="display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0;">
-        <a href="javascript:void(0)" onclick="showPortal()" style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.6rem 1.2rem;border:1px solid rgba(232,192,96,0.5);">Login / Portal</a>
-        <a href="javascript:void(0)" onclick="goTo('contact')" style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#ffffff;text-decoration:none;padding:0.7rem 1.4rem;background:#B8860B;white-space:nowrap;">Request a Referral</a>
-      </div>
+  <!-- NAV STRIP — always visible, horizontally scrollable on mobile -->
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#0C1F36;">
+    <div style="display:flex;align-items:center;min-width:max-content;padding:0 0.5rem;border-bottom:1px solid rgba(184,134,11,0.12);">
+      <a href="javascript:void(0)" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">About</a>
+      <a href="javascript:void(0)" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Services</a>
+      <a href="javascript:void(0)" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Our Process</a>
+      <a href="javascript:void(0)" onclick="goTo('testi')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Reviews</a>
+      <a href="javascript:void(0)" onclick="goTo('faq')"      style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">FAQ</a>
+      <a href="javascript:void(0)" onclick="goTo('join')"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">For Caregivers</a>
+      <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Contact</a>
+      <a href="javascript:void(0)" onclick="showPortal()"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);border:1px solid rgba(232,192,96,0.4);margin:0.4rem 0.6rem;">Login / Portal</a>
+      <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:0.9rem 1.2rem;white-space:nowrap;background:#B8860B;margin:0.4rem 0.6rem 0.4rem 0;">Request a Referral</a>
     </div>
   </div>
 
@@ -1298,23 +1284,7 @@ function goTo(id){
   if(el) el.scrollIntoView({behavior:'smooth'});
 }
 
-// RESPONSIVE NAV: show hamburger, hide menu on mobile
-function handleNavResize(){
-  const menu = document.getElementById('mainNavMenu');
-  const bar  = document.getElementById('mainNavBar');
-  const burger = document.getElementById('hamburgerBtn');
-  if(window.innerWidth <= 768){
-    menu.style.display = 'none';
-    bar.style.display  = 'none';
-    burger.style.display = 'flex';
-  } else {
-    menu.style.display = 'flex';
-    bar.style.display  = 'block';
-    burger.style.display = 'none';
-  }
-}
-handleNavResize();
-window.addEventListener('resize', handleNavResize);
+// Nav strip is always visible — no resize logic needed
 
 // Header is static block - no scroll effect needed
 
