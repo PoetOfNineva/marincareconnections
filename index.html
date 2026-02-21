@@ -154,10 +154,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   position:relative;
   min-height:100vh;
   display:grid;
-  grid-template-columns:1fr 44%;
+  grid-template-columns:1fr;
   overflow:hidden;
   background: url(hero.jpg?v=3240) center/cover no-repeat;
-  position:relative;
 }
 #hero::before {
   content:"";
@@ -1040,13 +1039,15 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ CONTACT ══ -->
 
 <!-- FULL WIDTH PHOTO BREAK 2 -->
-<div style="width:100%;height:420px;background:url(panel1.jpg?v=3240) center 40%/cover no-repeat;position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;background:linear-gradient(to left, rgba(12,31,54,0.8) 0%, rgba(12,31,54,0.3) 60%, transparent 100%);display:flex;align-items:center;justify-content:flex-end;padding:4rem;">
-    <div style="max-width:480px;text-align:right;">
-      <p style="font-family:Playfair Display,serif;font-size:clamp(1.5rem,2.8vw,2.2rem);color:white;font-style:italic;line-height:1.4;margin:0 0 1rem;">Every family deserves a caregiver they can trust completely.</p>
-      <p style="color:rgba(212,165,32,0.9);font-size:0.9rem;letter-spacing:0.15em;text-transform:uppercase;margin:0;">Serving Marin County with care</p>
-    </div>
+<div style="width:100%;height:480px;display:grid;grid-template-columns:420px 1fr;overflow:hidden;position:relative;">
+  <!-- Quote sits cleanly on left panel - navy bg -->
+  <div style="background:#0C1F36;display:flex;flex-direction:column;justify-content:center;padding:3.5rem 3rem;">
+    <div style="width:40px;height:3px;background:#D4A520;margin-bottom:2rem;"></div>
+    <p style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2vw,1.9rem);color:white;font-style:italic;line-height:1.5;margin:0 0 1.5rem;">"Every family deserves a caregiver they can trust completely."</p>
+    <p style="color:#D4A520;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;margin:0;">Serving Marin County with care</p>
   </div>
+  <!-- Photo fills right 2/3 - faces unobstructed -->
+  <div style="background:url(panel1.jpg?v=3240) center 40%/cover no-repeat;"></div>
 </div>
 
 <section id="contact" class="section">
