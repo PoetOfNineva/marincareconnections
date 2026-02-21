@@ -744,18 +744,20 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         </div>
       </a>
 
-      <ul class="nav-menu">
-        <li><a href="javascript:void(0)" onclick="goTo('about')">About</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('services')">Services</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('process')">Our Process</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('testi')">Reviews</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('faq')">FAQ</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('join')">For Caregivers</a></li>
-        <li><a href="javascript:void(0)" onclick="showPortal()" class="nb">Login / Portal</a></li>
-        <li><a href="javascript:void(0)" onclick="goTo('contact')" class="nc">Request a Referral</a></li>
+      <ul id="mainNavMenu" style="display:flex;align-items:center;gap:1.8rem;list-style:none;margin:0;padding:0;">
+        <li><a href="javascript:void(0)" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;">About</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;">Services</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;">Our Process</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('testi')"    style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;">Reviews</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('faq')"      style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;">FAQ</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('join')"     style="font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;">For Caregivers</a></li>
+        <li><a href="javascript:void(0)" onclick="showPortal()"     style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#E8C060 !important;text-decoration:none;padding:0.5rem 1.2rem;border:1px solid rgba(232,192,96,0.5);">Login / Portal</a></li>
+        <li><a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#ffffff !important;text-decoration:none;padding:0.55rem 1.4rem;background:#B8860B;white-space:nowrap;">Request a Referral</a></li>
       </ul>
-      <button class="hbg" onclick="document.getElementById('mobNav').classList.add('on')" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button id="hamburgerBtn" onclick="document.getElementById('mobNav').classList.add('on')" aria-label="Menu" style="display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px;z-index:1001;">
+        <span style="display:block;width:28px;height:3px;background:#E8C060;border-radius:2px;"></span>
+        <span style="display:block;width:28px;height:3px;background:#E8C060;border-radius:2px;"></span>
+        <span style="display:block;width:28px;height:3px;background:#E8C060;border-radius:2px;"></span>
       </button>
     </div>
   </div>
@@ -768,10 +770,10 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg" 
          style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:brightness(0.9);" 
          alt="Caregiver with senior">
-    <!-- FIX 2: Tagline bar — golden, Cinzel font, bigger, bold, crystal clear -->
-    <div class="hero-photo-tagline-bar">
-      <span class="hero-photo-tagline-text">
-        Domestic Referral Agency &nbsp;·&nbsp; Marin County, CA &nbsp;·&nbsp; Licensed &amp; Compliant
+    <!-- TAGLINE BAR — pure inline, zero CSS dependency -->
+    <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(6,13,22,0.85);padding:0.9rem 2rem;border-top:2px solid rgba(232,192,96,0.5);text-align:center;">
+      <span style="font-family:'Cinzel','Georgia',serif;font-size:clamp(0.9rem,2.5vw,1.25rem);font-weight:700;color:#E8C060;letter-spacing:0.25em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,0.8);">
+        DOMESTIC REFERRAL AGENCY &nbsp;·&nbsp; MARIN COUNTY, CA &nbsp;·&nbsp; LICENSED &amp; COMPLIANT
       </span>
     </div>
   </div>
@@ -779,8 +781,8 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <!-- TEXT: sits on solid navy below photo -->
   <div style="background:#04101E;padding:4rem 2rem 5rem;width:100%;box-sizing:border-box;text-align:center;">
 
-    <!-- FIX 1: AGENCY NAME — MASSIVE, ALL CAPS, GOLD, CINZEL FONT -->
-    <h1 style="font-family:'Cinzel','Playfair Display',serif;font-size:clamp(2.8rem,8vw,5.5rem);font-weight:900;line-height:1.05;margin-bottom:1.2rem;color:#E8C060;text-transform:uppercase;letter-spacing:0.06em;text-shadow:0 2px 24px rgba(232,192,96,0.3);display:block;width:100%;">MARIN CARE<br>CONNECTIONS</h1>
+    <!-- AGENCY NAME — pure inline, zero CSS class, nothing can override this -->
+    <h1 style="font-family:'Cinzel','Georgia',serif !important;font-size:clamp(2.6rem,9vw,5.5rem) !important;font-weight:900 !important;line-height:1.05 !important;margin-bottom:1.2rem !important;color:#E8C060 !important;text-transform:uppercase !important;letter-spacing:0.06em !important;text-shadow:0 2px 24px rgba(232,192,96,0.3) !important;display:block !important;width:100% !important;">MARIN CARE<br>CONNECTIONS</h1>
 
     <!-- Care That Comes to You -->
     <div class="hero-tagline">Care That Comes to You.</div>
@@ -1278,6 +1280,21 @@ function goTo(id){
   const el=document.getElementById(id);
   if(el) el.scrollIntoView({behavior:'smooth'});
 }
+
+// RESPONSIVE NAV: show hamburger, hide menu on mobile
+function handleNavResize(){
+  const menu = document.getElementById('mainNavMenu');
+  const burger = document.getElementById('hamburgerBtn');
+  if(window.innerWidth <= 768){
+    menu.style.display = 'none';
+    burger.style.display = 'flex';
+  } else {
+    menu.style.display = 'flex';
+    burger.style.display = 'none';
+  }
+}
+handleNavResize();
+window.addEventListener('resize', handleNavResize);
 
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('ink',window.scrollY>50));
 
