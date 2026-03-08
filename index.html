@@ -97,8 +97,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   color:var(--gold);
   background:rgba(184,134,11,0.05);
 }
-.fade-in { opacity:0; transform:translateY(22px); transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
+.fade-in { opacity:1; transform:none; transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
 .fade-in.show { opacity:1; transform:none; }
+.fade-in.animate { opacity:0; transform:translateY(22px); }
 
 /* ── BUTTONS ── */
 .btn {
@@ -1310,7 +1311,10 @@ function checkNavScroll(){
 const obs=new IntersectionObserver((es)=>{
   es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),i*60);obs.unobserve(e.target);}});
 },{threshold:0.08});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+document.querySelectorAll('.fade-in').forEach(el=>{
+  el.classList.add('animate');
+  obs.observe(el);
+});
 
 function showPortal(){
   const m=document.getElementById('portal-modal');
