@@ -99,7 +99,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 }
 .fade-in { opacity:1; transform:none; transition:opacity 0.75s var(--ease),transform 0.75s var(--ease); }
 .fade-in.show { opacity:1; transform:none; }
-.fade-in.animate { opacity:0; transform:translateY(22px); }
+.will-animate { opacity:0 !important; transform:translateY(22px) !important; }
 
 /* ── BUTTONS ── */
 .btn {
@@ -737,14 +737,14 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══════════════════════════════════════════════
      SOLID NAVY HEADER — Logo · Name · Nav always visible
 ════════════════════════════════════════════════ -->
-<header id="nav" style="background:#0C1F36;border-bottom:3px solid #B8860B;padding:0;position:relative;z-index:999;">
+<header id="nav" style="background:#0C1F36;border-bottom:3px solid #B8860B;padding:0;z-index:999;">
 
   <!-- TOP ROW: Logo + Agency Name + Tagline + Hamburger -->
   <div style="border-bottom:1px solid rgba(184,134,11,0.25);padding:1.4rem 1.5rem;">
     <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:1.2rem;">
 
       <!-- Logo -->
-      <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png"
+      <img src="logo.png"
            alt="MCC Logo"
            style="width:72px;height:72px;object-fit:contain;flex-shrink:0;">
 
@@ -787,7 +787,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ HERO — CLEAN IMAGE, NO TEXT ON IT ══ -->
 <section id="hero" style="display:block;">
   <div style="width:100%;height:55vw;max-height:600px;min-height:280px;overflow:hidden;">
-    <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg"
+    <img src="hero.jpg"
          style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"
          alt="Caregiver with senior">
   </div>
@@ -833,7 +833,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     </div>
   </div>
 
-  <div class="hero-right" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/hero.jpg) center/cover no-repeat; min-height:520px; border-radius:12px;"></div>
+  <div class="hero-right" style="background:url(hero.jpg) center/cover no-repeat; min-height:520px; border-radius:12px;"></div>
   <div class="hero-scroll">Scroll</div>
 </section>
 
@@ -922,10 +922,10 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ PHOTO STRIP ══ -->
 <div id="strips">
   <div class="strip-row">
-    <div class="strip-cell" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel1.jpg) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Companion Care</div><div class="strip-caption">Presence that matters</div></div></div>
-    <div class="strip-cell" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel2.jpg) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Personal Care</div><div class="strip-caption">Dignity in every gesture</div></div></div>
-    <div class="strip-cell" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel3.jpg) 20% center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
-    <div class="strip-cell" style="background:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel4.jpg) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Live-In Care</div><div class="strip-caption">There when the night is long</div></div></div>
+    <div class="strip-cell" style="background:url(panel1.jpg) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Companion Care</div><div class="strip-caption">Presence that matters</div></div></div>
+    <div class="strip-cell" style="background:url(panel2.jpg) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Personal Care</div><div class="strip-caption">Dignity in every gesture</div></div></div>
+    <div class="strip-cell" style="background:url(panel3.jpg) 20% center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Memory Care</div><div class="strip-caption">Patience without limit</div></div></div>
+    <div class="strip-cell" style="background:url(panel4.jpg) center/cover no-repeat;"><div class="strip-overlay"></div><div class="strip-label"><div class="strip-eyebrow">Live-In Care</div><div class="strip-caption">There when the night is long</div></div></div>
   </div>
 </div>
 
@@ -935,7 +935,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <div class="founder-layout">
       <div class="founder-frame fade-in">
         <div class="founder-box">
-          <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png" alt="Marin Care Connections Logo" style="width:200px;height:200px;object-fit:contain;">
+          <img src="logo.png" alt="Marin Care Connections Logo" style="width:200px;height:200px;object-fit:contain;">
         </div>
       </div>
       <div class="founder-text fade-in">
@@ -1004,7 +1004,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 <!-- PHOTO BREAK 1 -->
 <div class="photo-break">
-  <div class="photo-break-img" style="background-image:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel3.jpg);background-position:left center;"></div>
+  <div class="photo-break-img" style="background-image:url(panel3.jpg);background-position:left center;"></div>
   <div class="photo-break-text">
     <div class="pb-bar"></div>
     <p class="pb-quote">"The measure of a life is not its duration, but its donation."</p>
@@ -1091,7 +1091,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <p class="pb-quote">"Every family deserves a caregiver they can trust completely."</p>
     <p class="pb-sub">Serving Marin County with care</p>
   </div>
-  <div class="photo-break-img" style="background-image:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel1.jpg);background-position:center 40%;"></div>
+  <div class="photo-break-img" style="background-image:url(panel1.jpg);background-position:center 40%;"></div>
 </div>
 
 <!-- ══ CONTACT ══ -->
@@ -1185,7 +1185,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <p class="pb-quote">"You don't have to navigate this alone."</p>
     <p class="pb-body">Our guides help Marin families make confident decisions about home care.</p>
   </div>
-  <div class="photo-break-img" style="background-image:url(https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/panel4.jpg);background-position:center;"></div>
+  <div class="photo-break-img" style="background-image:url(panel4.jpg);background-position:center;"></div>
 </div>
 
 <!-- ══ RESOURCES ══ -->
@@ -1206,7 +1206,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <div class="footer-cols">
       <div class="f-brand">
         <div class="f-brand-row">
-          <img src="https://raw.githubusercontent.com/PoetOfNineva/marincareconnections/main/logo.png" alt="MCC Logo" style="width:36px;height:36px;object-fit:contain;">
+          <img src="logo.png" alt="MCC Logo" style="width:36px;height:36px;object-fit:contain;">
           <span class="f-brand-name">Marin Care Connections</span>
         </div>
         <span class="f-brand-sub">Domestic Referral Agency · Novato, CA · Est. 2026</span>
@@ -1282,7 +1282,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.85;margin-bottom:2rem;">Our secure client portal is launching very soon. Families and caregivers will be able to manage schedules, documents, and payments all in one place.</p>
     <p style="color:var(--gold-glow);font-size:0.88rem;margin-bottom:2rem;font-style:italic;">In the meantime, reach us directly:</p>
     <a href="tel:4153263507" style="display:block;background:var(--gold);color:white;padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;box-sizing:border-box;">(415) 326-3507</a>
-    <a href="mailto:captain@marincareconnections.com" style="display:block;border:1px solid rgba(184,134,11,0.4);color:var(--gold-glow);padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;box-sizing:border-box;overflow-wrap:break-word;word-break:break-word;">captain@marincareconnections.com</a>
+    <a href="mailto:captain@marincareconnections.com" style="display:block;border:1px solid rgba(184,134,11,0.4);color:var(--gold-glow);padding:1rem;font-family:DM Sans,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;box-sizing:border-box;">captain@marincareconnections.com</a>
   </div>
 </div>
 
@@ -1309,10 +1309,10 @@ function checkNavScroll(){
 // Header is static block - no scroll effect needed
 
 const obs=new IntersectionObserver((es)=>{
-  es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),i*60);obs.unobserve(e.target);}});
-},{threshold:0.08});
+  es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>{e.target.classList.remove('will-animate');e.target.classList.add('show');},i*60);obs.unobserve(e.target);}});
+},{threshold:0.05});
 document.querySelectorAll('.fade-in').forEach(el=>{
-  el.classList.add('animate');
+  el.classList.add('will-animate');
   obs.observe(el);
 });
 
