@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marin Care Connections | Home Care Referral Agency | Marin County, CA</title>
 <meta name="description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
+<!-- Canonical -->
+<link rel="canonical" href="https://marincareconnections.com/">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marincareconnections.com/">
+<meta property="og:title" content="Marin Care Connections | Home Care Referral Agency | Marin County, CA">
+<meta property="og:description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
+<meta property="og:image" content="https://marincareconnections.com/hero.jpg">
+<meta property="og:site_name" content="Marin Care Connections">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marin Care Connections | Home Care Referral Agency | Marin County, CA">
+<meta name="twitter:description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
+<meta name="twitter:image" content="https://marincareconnections.com/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
 <!--
@@ -141,7 +157,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 .hbg { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:8px; z-index:1001; position:relative; }
 .hbg span { display:block; width:28px; height:3px; background:#E8C060; border-radius:2px; }
-.mob-nav { display:none; position:fixed; inset:0; background:var(--ink); z-index:998; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem; padding:5rem 2rem 3rem; }
+.mob-nav { display:none; position:fixed; inset:0; background:var(--ink); z-index:1000; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem; padding:5rem 2rem 3rem; }
 .mob-nav.on { display:flex; }
 .mob-nav a { font-family:'Playfair Display',serif; font-size:1.65rem; font-style:italic; color:white; padding:0.55rem 1.5rem; min-height:44px; display:flex; align-items:center; }
 .mob-nav a:hover { color:var(--gold-glow); }
@@ -602,6 +618,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 .f-social { display:flex; gap:0.7rem; margin-top:1.5rem; }
 .f-social a { width:38px; height:38px; border:1px solid rgba(255,255,255,0.18); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.5); font-size:1rem; transition:all 0.3s; }
 .f-social a:hover { border-color:var(--gold); color:var(--gold); }
+.f-social-icon { width:38px; height:38px; border:1px solid rgba(255,255,255,0.10); display:inline-flex; align-items:center; justify-content:center; font-size:1rem; opacity:0.35; cursor:not-allowed; }
 .f-col h4 { font-size:0.7rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-glow); margin-bottom:1.5rem; font-family:'DM Sans',sans-serif; }
 .f-links  { list-style:none; display:flex; flex-direction:column; gap:0.8rem; }
 .f-links a { font-size:0.95rem; color:rgba(255,255,255,0.62); transition:color 0.3s; }
@@ -740,23 +757,25 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <body>
 
 <!-- ══ MOBILE NAV ══ -->
+<!-- Phase 2D: <main> and <nav> landmarks added below; mobile nav stays above <main> -->
 <div class="mob-nav" id="mobNav" role="dialog" aria-modal="true" aria-label="Site navigation">
   <button class="mob-close"
           aria-label="Close navigation"
           onclick="closeMobNav()">✕</button>
-  <a href="javascript:void(0)" onclick="goTo('about');closeMobNav()">About</a>
-  <a href="javascript:void(0)" onclick="goTo('services');closeMobNav()">Services</a>
-  <a href="javascript:void(0)" onclick="goTo('process');closeMobNav()">Our Process</a>
-  <a href="javascript:void(0)" onclick="goTo('testi');closeMobNav()">Reviews</a>
-  <a href="javascript:void(0)" onclick="goTo('faq');closeMobNav()">FAQ</a>
-  <a href="javascript:void(0)" onclick="goTo('join');closeMobNav()">For Caregivers</a>
-  <a href="javascript:void(0)" onclick="goTo('contact');closeMobNav()">Contact</a>
+  <a href="#about" onclick="goTo('about');closeMobNav()">About</a>
+  <a href="#services" onclick="goTo('services');closeMobNav()">Services</a>
+  <a href="#process" onclick="goTo('process');closeMobNav()">Our Process</a>
+  <a href="#testi" onclick="goTo('testi');closeMobNav()">Reviews</a>
+  <a href="#faq" onclick="goTo('faq');closeMobNav()">FAQ</a>
+  <a href="#join" onclick="goTo('join');closeMobNav()">For Caregivers</a>
+  <a href="#contact" onclick="goTo('contact');closeMobNav()">Contact</a>
 </div>
 
 <!-- ══════════════════════════════════════════════
      SOLID NAVY HEADER — Logo · Name · Nav always visible
 ════════════════════════════════════════════════ -->
 <header id="nav" style="background:#0C1F36;border-bottom:3px solid #B8860B;padding:0;z-index:999;">
+<nav aria-label="Main navigation">
 
   <!-- TOP ROW: Logo + Agency Name + Tagline + Hamburger -->
   <div style="border-bottom:1px solid rgba(184,134,11,0.25);padding:1.4rem 1.5rem;">
@@ -769,9 +788,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
       <!-- Agency Name + Tagline -->
       <div style="flex:1;min-width:0;">
-        <div style="font-family:'Cinzel','Georgia',serif;font-size:clamp(1.4rem,5vw,3.2rem);font-weight:900;color:#E8C060;text-transform:uppercase;letter-spacing:0.05em;line-height:1.1;text-shadow:0 2px 16px rgba(232,192,96,0.25);">
+        <h1 style="font-family:'Cinzel','Georgia',serif;font-size:clamp(1.4rem,5vw,3.2rem);font-weight:900;color:#E8C060;text-transform:uppercase;letter-spacing:0.05em;line-height:1.1;text-shadow:0 2px 16px rgba(232,192,96,0.25);margin:0;padding:0;">
           MARIN CARE CONNECTIONS
-        </div>
+        </h1>
         <div class="hdr-tagline" style="font-family:'DM Sans',sans-serif;font-size:clamp(0.6rem,1.8vw,0.85rem);font-weight:700;color:#E8C060;letter-spacing:0.2em;text-transform:uppercase;margin-top:0.35rem;opacity:0.8;">
           DOMESTIC REFERRAL AGENCY · MARIN COUNTY, CA · LICENSED &amp; COMPLIANT
         </div>
@@ -794,15 +813,15 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <div style="position:relative;">
     <div id="navStrip" onscroll="checkNavScroll()" style="overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#0C1F36;">
       <div style="display:flex;align-items:center;width:max-content;padding:0 0.5rem;border-bottom:1px solid rgba(184,134,11,0.12);">
-        <a href="javascript:void(0)" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">About</a>
-        <a href="javascript:void(0)" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Services</a>
-        <a href="javascript:void(0)" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Our Process</a>
-        <a href="javascript:void(0)" onclick="goTo('testi')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Reviews</a>
-        <a href="javascript:void(0)" onclick="goTo('faq')"      style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">FAQ</a>
-        <a href="javascript:void(0)" onclick="goTo('join')"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">For Caregivers</a>
-        <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Contact</a>
+        <a href="#about" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">About</a>
+        <a href="#services" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Services</a>
+        <a href="#process" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Our Process</a>
+        <a href="#testi" onclick="goTo('testi')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Reviews</a>
+        <a href="#faq" onclick="goTo('faq')"      style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">FAQ</a>
+        <a href="#join" onclick="goTo('join')"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">For Caregivers</a>
+        <a href="#contact" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Contact</a>
         <a href="javascript:void(0)" onclick="showPortal()"     style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);border:1px solid rgba(232,192,96,0.4);margin:0.4rem 0.6rem;">Login / Portal</a>
-        <a href="javascript:void(0)" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:0.9rem 1.2rem;white-space:nowrap;background:#B8860B;margin:0.4rem 0.6rem 0.4rem 0;">Request a Referral</a>
+        <a href="#contact" onclick="goTo('contact')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:0.9rem 1.2rem;white-space:nowrap;background:#B8860B;margin:0.4rem 0.6rem 0.4rem 0;">Request a Referral</a>
       </div>
     </div>
     <!-- SCROLL ARROW — fades out once user has scrolled -->
@@ -810,8 +829,10 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
       <span style="color:#E8C060;font-size:1.2rem;animation:arrowPulse 1.2s infinite;">›</span>
     </div>
   </div>
-
+</nav>
 </header>
+
+<main id="main-content">
 
 <!-- ══ HERO — CLEAN IMAGE, NO TEXT ON IT ══ -->
 <section id="hero" style="display:block;">
@@ -836,8 +857,8 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     </p>
 
     <div class="hero-ctas">
-      <a href="javascript:void(0)" onclick="goTo('contact')" class="btn btn-gold">Request a Caregiver ›</a>
-      <a href="javascript:void(0)" onclick="goTo('join')"    class="btn btn-ghost">Join Our Registry</a>
+      <a href="#contact" onclick="goTo('contact')" class="btn btn-gold">Request a Caregiver ›</a>
+      <a href="#join" onclick="goTo('join')"    class="btn btn-ghost">Join Our Registry</a>
     </div>
 
     <div class="hero-trust">
@@ -870,14 +891,14 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <div id="quicknav">
   <div class="container">
     <div class="qn-inner">
-      <a href="javascript:void(0)" onclick="goTo('about')"    class="qn-item"><div class="qn-icon">🏠</div><div class="qn-label">About Us</div><div class="qn-sub">Our story</div></a>
-      <a href="javascript:void(0)" onclick="goTo('services')" class="qn-item"><div class="qn-icon">🤝</div><div class="qn-label">Services</div><div class="qn-sub">What we offer</div></a>
-      <a href="javascript:void(0)" onclick="goTo('process')"  class="qn-item"><div class="qn-icon">🛡️</div><div class="qn-label">Our Process</div><div class="qn-sub">8-step check</div></a>
-      <a href="javascript:void(0)" onclick="goTo('how')"      class="qn-item"><div class="qn-icon">📋</div><div class="qn-label">How It Works</div><div class="qn-sub">Step by step</div></a>
-      <a href="javascript:void(0)" onclick="goTo('testi')"    class="qn-item"><div class="qn-icon">⭐</div><div class="qn-label">Reviews</div><div class="qn-sub">Family stories</div></a>
-      <a href="javascript:void(0)" onclick="goTo('faq')"      class="qn-item"><div class="qn-icon">💬</div><div class="qn-label">FAQ</div><div class="qn-sub">Your questions</div></a>
-      <a href="javascript:void(0)" onclick="goTo('join')"     class="qn-item"><div class="qn-icon">🌟</div><div class="qn-label">For Caregivers</div><div class="qn-sub">Join registry</div></a>
-      <a href="javascript:void(0)" onclick="goTo('contact')"  class="qn-item"><div class="qn-icon">📞</div><div class="qn-label">Contact</div><div class="qn-sub">(415) 326-3507</div></a>
+      <a href="#about" onclick="goTo('about')"    class="qn-item"><div class="qn-icon">🏠</div><div class="qn-label">About Us</div><div class="qn-sub">Our story</div></a>
+      <a href="#services" onclick="goTo('services')" class="qn-item"><div class="qn-icon">🤝</div><div class="qn-label">Services</div><div class="qn-sub">What we offer</div></a>
+      <a href="#process" onclick="goTo('process')"  class="qn-item"><div class="qn-icon">🛡️</div><div class="qn-label">Our Process</div><div class="qn-sub">8-step check</div></a>
+      <a href="#how" onclick="goTo('how')"      class="qn-item"><div class="qn-icon">📋</div><div class="qn-label">How It Works</div><div class="qn-sub">Step by step</div></a>
+      <a href="#testi" onclick="goTo('testi')"    class="qn-item"><div class="qn-icon">⭐</div><div class="qn-label">Reviews</div><div class="qn-sub">Family stories</div></a>
+      <a href="#faq" onclick="goTo('faq')"      class="qn-item"><div class="qn-icon">💬</div><div class="qn-label">FAQ</div><div class="qn-sub">Your questions</div></a>
+      <a href="#join" onclick="goTo('join')"     class="qn-item"><div class="qn-icon">🌟</div><div class="qn-label">For Caregivers</div><div class="qn-sub">Join registry</div></a>
+      <a href="#contact" onclick="goTo('contact')"  class="qn-item"><div class="qn-icon">📞</div><div class="qn-label">Contact</div><div class="qn-sub">(415) 326-3507</div></a>
     </div>
   </div>
 </div>
@@ -1061,7 +1082,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
           <li class="how-step"><span class="how-n">3</span><div><h4>Meet and Approve Your Match</h4><p>We present a verified caregiver profile for your review. You have the final say — always.</p></div></li>
           <li class="how-step"><span class="how-n">4</span><div><h4>Care Begins</h4><p>Sign your Client Service Agreement digitally. Scheduling managed through our secure partner platform.</p></div></li>
         </ol>
-        <div class="how-action"><a href="javascript:void(0)" onclick="goTo('contact')" class="btn btn-navy">Request a Referral ›</a></div>
+        <div class="how-action"><a href="#contact" onclick="goTo('contact')" class="btn btn-navy">Request a Referral ›</a></div>
       </div>
       <div class="how-divider"></div>
       <div class="how-col fade-in">
@@ -1074,7 +1095,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
           <li class="how-step"><span class="how-n">3</span><div><h4>We Present Each Opportunity</h4><p>When a client match comes in, we contact you with full shift details and your caregiver rate. Accept or decline freely.</p></div></li>
           <li class="how-step"><span class="how-n">4</span><div><h4>Work and Receive Payment</h4><p>Complete the shift, clock out through our platform, and receive secure, on-time payment.</p></div></li>
         </ol>
-        <div class="how-action"><a href="javascript:void(0)" onclick="goTo('join')" class="btn btn-navy">Join the Registry ›</a></div>
+        <div class="how-action"><a href="#join" onclick="goTo('join')" class="btn btn-navy">Join the Registry ›</a></div>
       </div>
     </div>
   </div>
@@ -1134,7 +1155,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         <p>Care needs do not wait for business hours. We respond across every channel because the families who call us deserve someone who answers.</p>
         <div class="c-methods">
           <a href="tel:4153263507" class="c-method"><div class="c-icon">📞</div><div><span class="c-label">Call or Text</span><span class="c-val">(415) 326-3507</span></div></a>
-          <a href="https://wa.me/12533160378" target="_blank" class="c-method"><div class="c-icon">💬</div><div><span class="c-label">WhatsApp</span><span class="c-val">Message us on WhatsApp</span></div></a>
+          <a href="https://wa.me/12533160378" target="_blank" rel="noopener noreferrer" class="c-method"><div class="c-icon">💬</div><div><span class="c-label">WhatsApp</span><span class="c-val">Message us on WhatsApp</span></div></a>
           <a href="mailto:captain@marincareconnections.com" class="c-method"><div class="c-icon">✉️</div><div><span class="c-label">Email</span><span class="c-val">captain@marincareconnections.com</span></div></a>
           <div class="c-method"><div class="c-icon">📍</div><div><span class="c-label">Office</span><span class="c-val">1942 Center Road, Novato CA 94947</span></div></div>
         </div>
@@ -1150,6 +1171,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
           <form action="https://formspree.io/f/mbdzdgvp" method="POST" onsubmit="fSubmit(event,'c')">
             <input type="hidden" name="_replyto" value="captain@marincareconnections.com">
             <input type="hidden" name="_subject" value="New Referral Request — Marin Care Connections">
+            <input type="hidden" name="form_type" value="client_inquiry">
             <div class="f-row"><div class="f-grp"><label>Your Name *</label><input type="text" name="name" placeholder="Full name" required></div><div class="f-grp"><label>Phone *</label><input type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required></div></div>
             <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label>City / Area</label><input type="text" name="city" placeholder="e.g. Mill Valley, Tiburon"></div></div>
             <div class="f-row"><div class="f-grp"><label>Care Type</label><select name="care_type"><option value="">Select</option><option>Companion Care</option><option>Personal Care</option><option>Live-In / 24-Hour</option><option>Overnight Care</option><option>Alzheimer's / Dementia</option><option>Post-Surgery Recovery</option><option>Hospice Support</option><option>Urgent / Discharge</option><option>Other</option></select></div><div class="f-grp"><label>How Soon?</label><select name="how_soon"><option value="">Select</option><option>Immediately / Urgent</option><option>Within 1 week</option><option>Within 2–4 weeks</option><option>Exploring options</option></select></div></div>
@@ -1162,6 +1184,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
           <form action="https://formspree.io/f/mbdzdgvp" method="POST" onsubmit="fSubmit(event,'j')">
             <input type="hidden" name="_replyto" value="captain@marincareconnections.com">
             <input type="hidden" name="_subject" value="New Caregiver Application — Marin Care Connections">
+            <input type="hidden" name="form_type" value="caregiver_application">
             <div class="f-row"><div class="f-grp"><label>Full Legal Name *</label><input type="text" name="name" placeholder="Last, First" required></div><div class="f-grp"><label>Phone *</label><input type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required></div></div>
             <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label>HCA Registry ID</label><input type="text" name="hca_id" placeholder="If active"></div></div>
             <div class="f-row"><div class="f-grp"><label>Years of Experience</label><select name="experience"><option>Under 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select></div><div class="f-grp"><label>Availability</label><select name="availability"><option>Full-time</option><option>Part-time</option><option>Live-in shifts</option><option>Overnight only</option><option>Flexible</option></select></div></div>
@@ -1191,7 +1214,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
           <li class="j-benefit"><span class="j-icon">✦</span><div class="j-body"><h4>Marin County's Finest Households</h4><p>Work with families who understand the value of quality care and treat caregivers with the dignity they have earned.</p></div></li>
           <li class="j-benefit"><span class="j-icon">✦</span><div class="j-body"><h4>Secure, Punctual Payments</h4><p>Every payment processed through our verified platform. No invoice chasing, no confusion, no delay.</p></div></li>
         </ul>
-        <a href="javascript:void(0)" onclick="goTo('contact')" class="btn btn-gold">Apply to Join Our Registry ›</a>
+        <a href="#contact" onclick="goTo('contact')" class="btn btn-gold">Apply to Join Our Registry ›</a>
       </div>
       <div class="join-reqs fade-in">
         <h3>Registry Requirements</h3>
@@ -1226,12 +1249,14 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <div class="container">
     <div class="res-head fade-in"><span class="eyebrow">Senior Care Guidance</span><div class="rule c"></div><h2>Resources for Families</h2></div>
     <div class="res-grid">
-      <div class="res-card fade-in"><span class="res-tag">Family Guide</span><h4>Navigating Home Care in Marin County</h4><p>A practical guide for families beginning the care conversation — from understanding what level of support your loved one needs to knowing exactly what to ask any agency before signing anything.</p><a href="javascript:void(0)" onclick="goTo('contact')" class="res-link">Request This Guide ›</a></div>
-      <div class="res-card fade-in"><span class="res-tag">Know Your Rights</span><h4>Referral Agency vs. Home Care Organization</h4><p>Clear, plain-language breakdown of the two models, the tax and employment implications for your household, and why transparency about this distinction is non-negotiable.</p><a href="javascript:void(0)" onclick="goTo('faq')" class="res-link">Read Our FAQ ›</a></div>
-      <div class="res-card fade-in"><span class="res-tag">For Caregivers</span><h4>Building a Professional Independent Caregiving Practice in California</h4><p>From HCA registration and liability insurance to managing your schedule and income — a comprehensive starting point for California caregivers building their own independent business.</p><a href="javascript:void(0)" onclick="goTo('join')" class="res-link">Join Our Registry ›</a></div>
+      <div class="res-card fade-in"><span class="res-tag">Family Guide</span><h4>Navigating Home Care in Marin County</h4><p>A practical guide for families beginning the care conversation — from understanding what level of support your loved one needs to knowing exactly what to ask any agency before signing anything.</p><a href="#contact" onclick="goTo('contact')" class="res-link">Request This Guide ›</a></div>
+      <div class="res-card fade-in"><span class="res-tag">Know Your Rights</span><h4>Referral Agency vs. Home Care Organization</h4><p>Clear, plain-language breakdown of the two models, the tax and employment implications for your household, and why transparency about this distinction is non-negotiable.</p><a href="#faq" onclick="goTo('faq')" class="res-link">Read Our FAQ ›</a></div>
+      <div class="res-card fade-in"><span class="res-tag">For Caregivers</span><h4>Building a Professional Independent Caregiving Practice in California</h4><p>From HCA registration and liability insurance to managing your schedule and income — a comprehensive starting point for California caregivers building their own independent business.</p><a href="#join" onclick="goTo('join')" class="res-link">Join Our Registry ›</a></div>
     </div>
   </div>
 </section>
+
+</main><!-- /#main-content -->
 
 <!-- ══ FOOTER ══ -->
 <footer id="footer">
@@ -1250,32 +1275,33 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
           1942 Center Road, Novato CA 94947
         </div>
         <div class="f-social">
-          <a href="javascript:void(0)" title="Instagram">📷</a>
-          <a href="javascript:void(0)" title="Facebook">👥</a>
-          <a href="javascript:void(0)" title="Yelp">⭐</a>
-          <a href="javascript:void(0)" title="LinkedIn">💼</a>
+          <!-- Social profiles coming soon — links disabled until pages are live -->
+          <span class="f-social-icon" aria-label="Instagram (coming soon)" title="Instagram — coming soon">📷</span>
+          <span class="f-social-icon" aria-label="Facebook (coming soon)" title="Facebook — coming soon">👥</span>
+          <span class="f-social-icon" aria-label="Yelp (coming soon)" title="Yelp — coming soon">⭐</span>
+          <span class="f-social-icon" aria-label="LinkedIn (coming soon)" title="LinkedIn — coming soon">💼</span>
         </div>
       </div>
       <div class="f-col">
         <h4>Services</h4>
         <ul class="f-links">
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Companion Care</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Personal Care</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Live-In &amp; 24-Hour</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Memory &amp; Dementia</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Respite Care</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('services')">Urgent Placements</a></li>
+          <li><a href="#services" onclick="goTo('services')">Companion Care</a></li>
+          <li><a href="#services" onclick="goTo('services')">Personal Care</a></li>
+          <li><a href="#services" onclick="goTo('services')">Live-In &amp; 24-Hour</a></li>
+          <li><a href="#services" onclick="goTo('services')">Memory &amp; Dementia</a></li>
+          <li><a href="#services" onclick="goTo('services')">Respite Care</a></li>
+          <li><a href="#services" onclick="goTo('services')">Urgent Placements</a></li>
         </ul>
       </div>
       <div class="f-col">
         <h4>Company</h4>
         <ul class="f-links">
-          <li><a href="javascript:void(0)" onclick="goTo('about')">About Us</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('founder')">Our Story</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('process')">Verification Process</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('testi')">Client Reviews</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('resources')">Family Resources</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('faq')">FAQ</a></li>
+          <li><a href="#about" onclick="goTo('about')">About Us</a></li>
+          <li><a href="#founder" onclick="goTo('founder')">Our Story</a></li>
+          <li><a href="#process" onclick="goTo('process')">Verification Process</a></li>
+          <li><a href="#testi" onclick="goTo('testi')">Client Reviews</a></li>
+          <li><a href="#resources" onclick="goTo('resources')">Family Resources</a></li>
+          <li><a href="#faq" onclick="goTo('faq')">FAQ</a></li>
         </ul>
       </div>
       <div class="f-col">
@@ -1283,9 +1309,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         <ul class="f-links">
           <li><a href="tel:4153263507">(415) 326-3507</a></li>
           <li><a href="mailto:captain@marincareconnections.com">Email Us</a></li>
-          <li><a href="https://wa.me/12533160378">WhatsApp</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('contact')">Request a Referral</a></li>
-          <li><a href="javascript:void(0)" onclick="goTo('join')">Join Our Registry</a></li>
+          <li><a href="https://wa.me/12533160378" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="#contact" onclick="goTo('contact')">Request a Referral</a></li>
+          <li><a href="#join" onclick="goTo('join')">Join Our Registry</a></li>
           <li><a href="javascript:void(0)" onclick="showPortal()">Login / Portal</a></li>
         </ul>
       </div>
@@ -1302,15 +1328,15 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <!-- ══ FLOATING BUTTONS ══ -->
 <div class="float-bar">
   <a href="tel:4153263507" class="fl-btn fl-phone" title="Call (415) 326-3507">📞</a>
-  <a href="https://wa.me/12533160378" target="_blank" class="fl-btn fl-wa" title="WhatsApp">💬</a>
+  <a href="https://wa.me/12533160378" target="_blank" rel="noopener noreferrer" class="fl-btn fl-wa" title="WhatsApp">💬</a>
 </div>
 
 <!-- ══ PORTAL MODAL ══ -->
-<div id="portal-modal" style="display:none;position:fixed;inset:0;background:rgba(6,13,22,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+<div id="portal-modal" role="dialog" aria-modal="true" aria-labelledby="portal-modal-title" style="display:none;position:fixed;inset:0;background:rgba(6,13,22,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
   <div style="background:var(--navy-mid);border:1px solid var(--gold);padding:2rem 1.5rem;max-width:440px;width:100%;box-sizing:border-box;position:relative;text-align:center;">
-    <button onclick="document.getElementById('portal-modal').style.display='none'" style="position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+    <button id="portal-close-btn" onclick="closePortal()" aria-label="Close portal information" style="position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;">✕</button>
     <div style="font-size:3rem;margin-bottom:1rem;">🌙</div>
-    <h3 style="color:white;font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;">Client Portal</h3>
+    <h3 id="portal-modal-title" style="color:white;font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;">Client Portal</h3>
     <div style="width:48px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-glow));margin:0 auto 1.5rem;"></div>
     <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.85;margin-bottom:2rem;">Our secure client portal is launching very soon. Families and caregivers will be able to manage schedules, documents, and payments all in one place.</p>
     <p style="color:var(--gold-glow);font-size:0.88rem;margin-bottom:2rem;font-style:italic;">In the meantime, reach us directly:</p>
@@ -1388,13 +1414,32 @@ document.querySelectorAll('.fade-in').forEach(el=>{
   obs.observe(el);
 });
 
+var _portalPreviousFocus = null;
+
 function showPortal(){
   const m=document.getElementById('portal-modal');
+  _portalPreviousFocus = document.activeElement;
   m.style.display='flex';
+  document.body.style.overflow='hidden';
+  var closeBtn = document.getElementById('portal-close-btn');
+  if(closeBtn) closeBtn.focus();
+  document.addEventListener('keydown', portalKeyHandler);
+}
+
+function closePortal(){
+  const m=document.getElementById('portal-modal');
+  m.style.display='none';
+  document.body.style.overflow='';
+  document.removeEventListener('keydown', portalKeyHandler);
+  if(_portalPreviousFocus) _portalPreviousFocus.focus();
+}
+
+function portalKeyHandler(e){
+  if(e.key==='Escape') closePortal();
 }
 
 document.getElementById('portal-modal').addEventListener('click',function(e){
-  if(e.target===this) this.style.display='none';
+  if(e.target===this) closePortal();
 });
 
 function toggleFaq(el){
