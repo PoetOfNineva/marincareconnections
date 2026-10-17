@@ -7,6 +7,8 @@
 <meta name="description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
 <!-- Canonical -->
 <link rel="canonical" href="https://marincareconnections.com/">
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="logo.png">
 <!-- Open Graph -->
@@ -21,6 +23,40 @@
 <meta name="twitter:title" content="Marin Care Connections | Home Care Referral Agency | Marin County, CA">
 <meta name="twitter:description" content="Marin Care Connections connects Marin County families with rigorously verified independent caregivers. Live-in, 24-hour, companion and specialized home care referrals.">
 <meta name="twitter:image" content="https://marincareconnections.com/hero.jpg">
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Marin Care Connections",
+  "description": "California Domestic Referral Agency connecting Marin County families with rigorously verified independent caregivers for live-in, 24-hour, companion, and specialized home care.",
+  "url": "https://marincareconnections.com",
+  "logo": "https://marincareconnections.com/logo.png",
+  "image": "https://marincareconnections.com/hero.jpg",
+  "telephone": "+14153263507",
+  "email": "captain@marincareconnections.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1942 Center Road",
+    "addressLocality": "Novato",
+    "addressRegion": "CA",
+    "postalCode": "94947",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "County",
+    "name": "Marin County",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "California"
+    }
+  },
+  "serviceType": "Home Care Referral Agency",
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": []
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
 <!--
@@ -679,7 +715,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   .footer-bot { flex-direction:column; }
   .strip-row { grid-template-columns:1fr; }
   .strip-cell { height:300px !important; }
-  .qn-item { min-width:100px; padding:1rem 0.8rem; }
+  .qn-item { min-width:88px; padding:1rem 0.6rem; }
+  .qn-sub { display:none; }
+  .qn-label { font-size:0.68rem; }
   .hero-sub { text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
   .nav-logo img { width:64px !important; height:64px !important; }
   /* Form box padding reduced on mobile */
@@ -693,6 +731,18 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   header#nav img[alt="MCC Logo"] { width:40px !important; height:40px !important; }
   /* Hide tagline on smallest phones to reduce header height */
   header#nav .hdr-tagline { display:none !important; }
+  /* Reduce container padding to prevent horizontal overflow */
+  .container { padding:0 1rem; }
+  /* Process grid: single column at narrow widths to prevent overflow */
+  .process-grid { grid-template-columns:1fr !important; gap:1.5rem; }
+  /* Contact method tighter padding */
+  .c-method { padding:1rem 1rem; gap:1rem; }
+  /* Form box minimal padding */
+  .form-box { padding:1.5rem 0.75rem !important; }
+  /* CRITICAL: grid children must not overflow their grid column */
+  .contact-layout > *, .about-grid > *, .join-layout > *, .founder-layout > * { min-width:0; }
+  /* Containment on contact section */
+  #contact .container { overflow-x:hidden; }
 }
 
 /* ── PHOTO BREAK RESPONSIVE ── */
@@ -783,8 +833,9 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
       <!-- Logo -->
       <img src="logo.png"
-           alt="MCC Logo"
-           style="width:72px;height:72px;object-fit:contain;flex-shrink:0;">
+           alt="Marin Care Connections Logo"
+           style="width:72px;height:72px;object-fit:contain;flex-shrink:0;"
+           fetchpriority="high" decoding="async">
 
       <!-- Agency Name + Tagline -->
       <div style="flex:1;min-width:0;">
@@ -839,7 +890,8 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   <div style="width:100%;height:56vw;max-height:620px;min-height:340px;overflow:hidden;">
     <img src="hero.jpg"
          style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"
-         alt="Caregiver with senior">
+         alt="Caregiver with senior"
+         fetchpriority="high" decoding="async">
   </div>
 
   <!-- TEXT: sits on solid navy below photo -->
@@ -985,7 +1037,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <div class="founder-layout">
       <div class="founder-frame fade-in">
         <div class="founder-box">
-          <img src="logo.png" alt="Marin Care Connections Logo" style="width:200px;height:200px;object-fit:contain;">
+          <img src="logo.png" alt="Marin Care Connections Logo" style="width:200px;height:200px;object-fit:contain;" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="founder-text fade-in">
@@ -1172,10 +1224,10 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
             <input type="hidden" name="_replyto" value="captain@marincareconnections.com">
             <input type="hidden" name="_subject" value="New Referral Request — Marin Care Connections">
             <input type="hidden" name="form_type" value="client_inquiry">
-            <div class="f-row"><div class="f-grp"><label>Your Name *</label><input type="text" name="name" placeholder="Full name" required></div><div class="f-grp"><label>Phone *</label><input type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required></div></div>
-            <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label>City / Area</label><input type="text" name="city" placeholder="e.g. Mill Valley, Tiburon"></div></div>
-            <div class="f-row"><div class="f-grp"><label>Care Type</label><select name="care_type"><option value="">Select</option><option>Companion Care</option><option>Personal Care</option><option>Live-In / 24-Hour</option><option>Overnight Care</option><option>Alzheimer's / Dementia</option><option>Post-Surgery Recovery</option><option>Hospice Support</option><option>Urgent / Discharge</option><option>Other</option></select></div><div class="f-grp"><label>How Soon?</label><select name="how_soon"><option value="">Select</option><option>Immediately / Urgent</option><option>Within 1 week</option><option>Within 2–4 weeks</option><option>Exploring options</option></select></div></div>
-            <div class="f-row full"><div class="f-grp"><label>Tell Us About Your Needs</label><textarea name="message" placeholder="Describe your care situation, schedule, and anything we should know..."></textarea></div></div>
+            <div class="f-row"><div class="f-grp"><label for="cf-name">Your Name *</label><input id="cf-name" type="text" name="name" placeholder="Full name" required></div><div class="f-grp"><label for="cf-phone">Phone *</label><input id="cf-phone" type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required></div></div>
+            <div class="f-row"><div class="f-grp"><label for="cf-email">Email *</label><input id="cf-email" type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label for="cf-city">City / Area</label><input id="cf-city" type="text" name="city" placeholder="e.g. Mill Valley, Tiburon"></div></div>
+            <div class="f-row"><div class="f-grp"><label for="cf-care-type">Care Type</label><select id="cf-care-type" name="care_type"><option value="">Select</option><option>Companion Care</option><option>Personal Care</option><option>Live-In / 24-Hour</option><option>Overnight Care</option><option>Alzheimer's / Dementia</option><option>Post-Surgery Recovery</option><option>Hospice Support</option><option>Urgent / Discharge</option><option>Other</option></select></div><div class="f-grp"><label for="cf-how-soon">How Soon?</label><select id="cf-how-soon" name="how_soon"><option value="">Select</option><option>Immediately / Urgent</option><option>Within 1 week</option><option>Within 2–4 weeks</option><option>Exploring options</option></select></div></div>
+            <div class="f-row full"><div class="f-grp"><label for="cf-message">Tell Us About Your Needs</label><textarea id="cf-message" name="message" placeholder="Describe your care situation, schedule, and anything we should know..."></textarea></div></div>
             <button type="submit" class="f-submit">Submit Referral Request</button>
             <p class="f-note">By submitting you agree to our Client Service Agreement terms. We respond within a few hours with a verified caregiver match and transparent pricing — before any commitment is made.</p>
           </form>
@@ -1185,11 +1237,11 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
             <input type="hidden" name="_replyto" value="captain@marincareconnections.com">
             <input type="hidden" name="_subject" value="New Caregiver Application — Marin Care Connections">
             <input type="hidden" name="form_type" value="caregiver_application">
-            <div class="f-row"><div class="f-grp"><label>Full Legal Name *</label><input type="text" name="name" placeholder="Last, First" required></div><div class="f-grp"><label>Phone *</label><input type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required></div></div>
-            <div class="f-row"><div class="f-grp"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label>HCA Registry ID</label><input type="text" name="hca_id" placeholder="If active"></div></div>
-            <div class="f-row"><div class="f-grp"><label>Years of Experience</label><select name="experience"><option>Under 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select></div><div class="f-grp"><label>Availability</label><select name="availability"><option>Full-time</option><option>Part-time</option><option>Live-in shifts</option><option>Overnight only</option><option>Flexible</option></select></div></div>
-            <div class="f-row full"><div class="f-grp"><label>Personal Liability Insurance ($1M/$6M)?</label><select name="insurance"><option>Yes — currently insured</option><option>No — need to obtain it</option><option>Not sure</option></select></div></div>
-            <div class="f-row full"><div class="f-grp"><label>Specialties, Certifications &amp; Notes</label><textarea name="message" placeholder="Certifications, languages spoken, care specialties, anything relevant..."></textarea></div></div>
+            <div class="f-row"><div class="f-grp"><label for="jf-name">Full Legal Name *</label><input id="jf-name" type="text" name="name" placeholder="Last, First" required></div><div class="f-grp"><label for="jf-phone">Phone *</label><input id="jf-phone" type="tel" name="phone" placeholder="(xxx) xxx-xxxx" required></div></div>
+            <div class="f-row"><div class="f-grp"><label for="jf-email">Email *</label><input id="jf-email" type="email" name="email" placeholder="your@email.com" required></div><div class="f-grp"><label for="jf-hca-id">HCA Registry ID</label><input id="jf-hca-id" type="text" name="hca_id" placeholder="If active"></div></div>
+            <div class="f-row"><div class="f-grp"><label for="jf-experience">Years of Experience</label><select id="jf-experience" name="experience"><option>Under 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select></div><div class="f-grp"><label for="jf-availability">Availability</label><select id="jf-availability" name="availability"><option>Full-time</option><option>Part-time</option><option>Live-in shifts</option><option>Overnight only</option><option>Flexible</option></select></div></div>
+            <div class="f-row full"><div class="f-grp"><label for="jf-insurance">Personal Liability Insurance ($1M/$6M)?</label><select id="jf-insurance" name="insurance"><option>Yes — currently insured</option><option>No — need to obtain it</option><option>Not sure</option></select></div></div>
+            <div class="f-row full"><div class="f-grp"><label for="jf-message">Specialties, Certifications &amp; Notes</label><textarea id="jf-message" name="message" placeholder="Certifications, languages spoken, care specialties, anything relevant..."></textarea></div></div>
             <button type="submit" class="f-submit">Submit Registry Application</button>
             <p class="f-note">Submitting confirms you understand you are applying as an independent contractor, not an employee of Marin Care Connections LLC. Full document verification required before approval.</p>
           </form>
@@ -1264,7 +1316,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
     <div class="footer-cols">
       <div class="f-brand">
         <div class="f-brand-row">
-          <img src="logo.png" alt="MCC Logo" style="width:36px;height:36px;object-fit:contain;">
+          <img src="logo.png" alt="Marin Care Connections Logo" style="width:36px;height:36px;object-fit:contain;" loading="lazy" decoding="async">
           <span class="f-brand-name">Marin Care Connections</span>
         </div>
         <span class="f-brand-sub">Domestic Referral Agency · Novato, CA · Est. 2026</span>
