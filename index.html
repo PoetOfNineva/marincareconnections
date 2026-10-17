@@ -670,6 +670,11 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 @media(max-width:480px) {
   /* Single column values on small phones */
   .values-row { grid-template-columns:1fr !important; }
+  /* Tighten header further on small phones */
+  header#nav > div:first-child { padding:0.5rem 0.75rem !important; }
+  header#nav img[alt="MCC Logo"] { width:40px !important; height:40px !important; }
+  /* Hide tagline on smallest phones to reduce header height */
+  header#nav .hdr-tagline { display:none !important; }
 }
 
 /* ── PHOTO BREAK RESPONSIVE ── */
@@ -766,7 +771,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         <div style="font-family:'Cinzel','Georgia',serif;font-size:clamp(1.4rem,5vw,3.2rem);font-weight:900;color:#E8C060;text-transform:uppercase;letter-spacing:0.05em;line-height:1.1;text-shadow:0 2px 16px rgba(232,192,96,0.25);">
           MARIN CARE CONNECTIONS
         </div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:clamp(0.6rem,1.8vw,0.85rem);font-weight:700;color:#E8C060;letter-spacing:0.2em;text-transform:uppercase;margin-top:0.35rem;opacity:0.8;">
+        <div class="hdr-tagline" style="font-family:'DM Sans',sans-serif;font-size:clamp(0.6rem,1.8vw,0.85rem);font-weight:700;color:#E8C060;letter-spacing:0.2em;text-transform:uppercase;margin-top:0.35rem;opacity:0.8;">
           DOMESTIC REFERRAL AGENCY · MARIN COUNTY, CA · LICENSED &amp; COMPLIANT
         </div>
       </div>
