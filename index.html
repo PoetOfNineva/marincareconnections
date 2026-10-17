@@ -141,11 +141,12 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 
 .hbg { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:8px; z-index:1001; position:relative; }
 .hbg span { display:block; width:28px; height:3px; background:#E8C060; border-radius:2px; }
-.mob-nav { display:none; position:fixed; inset:0; background:var(--ink); z-index:998; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
+.mob-nav { display:none; position:fixed; inset:0; background:var(--ink); z-index:998; flex-direction:column; align-items:center; justify-content:center; gap:1.2rem; padding:5rem 2rem 3rem; }
 .mob-nav.on { display:flex; }
-.mob-nav a { font-family:'Playfair Display',serif; font-size:2.4rem; font-style:italic; color:white; }
+.mob-nav a { font-family:'Playfair Display',serif; font-size:1.65rem; font-style:italic; color:white; padding:0.55rem 1.5rem; min-height:44px; display:flex; align-items:center; }
 .mob-nav a:hover { color:var(--gold-glow); }
-.mob-close { position:absolute; top:2rem; right:2rem; font-size:1.5rem; color:white; cursor:pointer; background:none; border:none; }
+.mob-close { position:absolute; top:1.25rem; right:1.25rem; font-size:1.4rem; color:white; cursor:pointer; background:none; border:none; padding:0.5rem; min-width:44px; min-height:44px; display:flex; align-items:center; justify-content:center; border-radius:4px; }
+.mob-close:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
 
 /* ════════════════════════════════════════════════
    HERO
@@ -1326,6 +1327,8 @@ function openMobNav(){
   if(!nav || !btn) return;
   nav.classList.add('on');
   btn.setAttribute('aria-expanded','true');
+  // Prevent background scroll while overlay is open
+  document.body.style.overflow = 'hidden';
   // Move focus to close button for keyboard users
   var closeBtn = nav.querySelector('.mob-close');
   if(closeBtn) closeBtn.focus();
@@ -1338,6 +1341,8 @@ function closeMobNav(){
   var btn = document.getElementById('hbgBtn');
   if(!nav) return;
   nav.classList.remove('on');
+  // Restore background scrolling
+  document.body.style.overflow = '';
   if(btn){
     btn.setAttribute('aria-expanded','false');
     // Return focus to hamburger button
