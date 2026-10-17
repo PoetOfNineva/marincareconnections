@@ -52,7 +52,7 @@
 }
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
 body {
   font-family:'DM Sans',sans-serif;
   background:var(--cream);
@@ -613,7 +613,7 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 /* ════════════════════════════════════════════════
    FLOATING BUTTONS
 ════════════════════════════════════════════════ */
-.float-bar { position:fixed; bottom:2rem; right:2rem; display:flex; flex-direction:column; gap:0.7rem; z-index:997; }
+.float-bar { position:fixed; bottom:calc(2rem + env(safe-area-inset-bottom, 0px)); right:2rem; display:flex; flex-direction:column; gap:0.7rem; z-index:997; }
 .fl-btn { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; text-decoration:none; box-shadow:0 4px 20px rgba(0,0,0,0.3); transition:transform 0.3s; }
 .fl-btn:hover { transform:scale(1.12); }
 .fl-phone { background:var(--navy-mid); color:white; }
@@ -645,7 +645,12 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   body { font-size:16px; }
   .nav-menu { display:none; }
   .hbg { display:flex; }
-  .values-row { grid-template-columns:repeat(3,1fr) !important; }
+  /* Hide desktop scroll strip on mobile — hamburger takes over */
+  #navStrip { display:none !important; }
+  /* Slim mobile header top row */
+  header#nav > div:first-child { padding:0.7rem 1rem !important; }
+  header#nav img[alt="MCC Logo"] { width:48px !important; height:48px !important; }
+  .values-row { grid-template-columns:1fr 1fr !important; }
   .v-block { padding:2rem 1rem; }
   .v-block p { font-size:0.88rem; }
   .svc-grid,.faq-grid { grid-template-columns:1fr; }
@@ -659,6 +664,12 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
   .qn-item { min-width:100px; padding:1rem 0.8rem; }
   .hero-sub { text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
   .nav-logo img { width:64px !important; height:64px !important; }
+  /* Form box padding reduced on mobile */
+  .form-box { padding:2rem 1.25rem !important; }
+}
+@media(max-width:480px) {
+  /* Single column values on small phones */
+  .values-row { grid-template-columns:1fr !important; }
 }
 
 /* ── PHOTO BREAK RESPONSIVE ── */
@@ -723,15 +734,17 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 <body>
 
 <!-- ══ MOBILE NAV ══ -->
-<div class="mob-nav" id="mobNav">
-  <button class="mob-close" onclick="document.getElementById('mobNav').classList.remove('on')">✕</button>
-  <a href="javascript:void(0)" onclick="goTo('about');document.getElementById('mobNav').classList.remove('on')">About</a>
-  <a href="javascript:void(0)" onclick="goTo('services');document.getElementById('mobNav').classList.remove('on')">Services</a>
-  <a href="javascript:void(0)" onclick="goTo('process');document.getElementById('mobNav').classList.remove('on')">Our Process</a>
-  <a href="javascript:void(0)" onclick="goTo('testi');document.getElementById('mobNav').classList.remove('on')">Reviews</a>
-  <a href="javascript:void(0)" onclick="goTo('faq');document.getElementById('mobNav').classList.remove('on')">FAQ</a>
-  <a href="javascript:void(0)" onclick="goTo('join');document.getElementById('mobNav').classList.remove('on')">For Caregivers</a>
-  <a href="javascript:void(0)" onclick="goTo('contact');document.getElementById('mobNav').classList.remove('on')">Contact</a>
+<div class="mob-nav" id="mobNav" role="dialog" aria-modal="true" aria-label="Site navigation">
+  <button class="mob-close"
+          aria-label="Close navigation"
+          onclick="closeMobNav()">✕</button>
+  <a href="javascript:void(0)" onclick="goTo('about');closeMobNav()">About</a>
+  <a href="javascript:void(0)" onclick="goTo('services');closeMobNav()">Services</a>
+  <a href="javascript:void(0)" onclick="goTo('process');closeMobNav()">Our Process</a>
+  <a href="javascript:void(0)" onclick="goTo('testi');closeMobNav()">Reviews</a>
+  <a href="javascript:void(0)" onclick="goTo('faq');closeMobNav()">FAQ</a>
+  <a href="javascript:void(0)" onclick="goTo('join');closeMobNav()">For Caregivers</a>
+  <a href="javascript:void(0)" onclick="goTo('contact');closeMobNav()">Contact</a>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -758,13 +771,23 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
         </div>
       </div>
 
+      <!-- Hamburger — visible on mobile only (CSS: display:none until ≤768px) -->
+      <button class="hbg"
+              id="hbgBtn"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobNav"
+              onclick="openMobNav()">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
   </div>
 
   <!-- NAV STRIP — always visible, horizontally scrollable, with right-arrow hint -->
   <div style="position:relative;">
     <div id="navStrip" onscroll="checkNavScroll()" style="overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#0C1F36;">
-      <div style="display:flex;align-items:center;min-width:max-content;padding:0 0.5rem;border-bottom:1px solid rgba(184,134,11,0.12);">
+      <div style="display:flex;align-items:center;width:max-content;padding:0 0.5rem;border-bottom:1px solid rgba(184,134,11,0.12);">
         <a href="javascript:void(0)" onclick="goTo('about')"    style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">About</a>
         <a href="javascript:void(0)" onclick="goTo('services')" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Services</a>
         <a href="javascript:void(0)" onclick="goTo('process')"  style="font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E8C060;text-decoration:none;padding:0.9rem 1rem;white-space:nowrap;border-right:1px solid rgba(184,134,11,0.15);">Our Process</a>
@@ -1291,6 +1314,37 @@ p  { font-size: 1.1rem; font-weight:300; line-height:1.85; }
 </div>
 
 <script>
+/* ── MOBILE NAV: open / close / keyboard / focus ── */
+function openMobNav(){
+  var nav = document.getElementById('mobNav');
+  var btn = document.getElementById('hbgBtn');
+  if(!nav || !btn) return;
+  nav.classList.add('on');
+  btn.setAttribute('aria-expanded','true');
+  // Move focus to close button for keyboard users
+  var closeBtn = nav.querySelector('.mob-close');
+  if(closeBtn) closeBtn.focus();
+  // Escape key closes overlay
+  document.addEventListener('keydown', mobNavKeyHandler);
+}
+
+function closeMobNav(){
+  var nav = document.getElementById('mobNav');
+  var btn = document.getElementById('hbgBtn');
+  if(!nav) return;
+  nav.classList.remove('on');
+  if(btn){
+    btn.setAttribute('aria-expanded','false');
+    // Return focus to hamburger button
+    btn.focus();
+  }
+  document.removeEventListener('keydown', mobNavKeyHandler);
+}
+
+function mobNavKeyHandler(e){
+  if(e.key === 'Escape') closeMobNav();
+}
+
 function goTo(id){
   const el=document.getElementById(id);
   if(!el) return;
